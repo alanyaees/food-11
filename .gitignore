@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# env / secrets
+.env
+.env*.local
+!.env.example
+
+# misc
+.DS_Store
+*.pem
+.vercel
+*.tsbuildinfo
+
+# local dev artifacts
+/generated-images/
+/.dev-assets/
+/screenshots/

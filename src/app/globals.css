@@ -1,0 +1,326 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────
+   FULL. design tokens
+   Neutral, editorial base (bone + ink) punctuated by a single
+   brand accent and per-flavour accents. Everything here is a
+   token: change once, change everywhere.
+   ─────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Surfaces */
+  --color-bone: #f4f1ea;
+  --color-bone-100: #fbfaf6;
+  --color-bone-200: #efeade;
+  --color-bone-300: #e4ddcd;
+  --color-ink: #0e0e0c;
+  --color-ink-800: #1a1a17;
+  --color-ink-700: #2a2a25;
+  --color-ink-600: #3d3d36;
+
+  /* Text */
+  --color-fg: #0e0e0c;
+  --color-fg-muted: #6b6a61;
+  --color-fg-subtle: #96948a;
+  --color-on-ink: #f4f1ea;
+  --color-on-ink-muted: #a8a49a;
+
+  /* Lines */
+  --color-line: #ded7c7;
+  --color-line-strong: #c9c0ab;
+  --color-line-ink: #34342d;
+
+  /* Brand accent — "ember" */
+  --color-ember: #ff4a1c;
+  --color-ember-600: #e63d12;
+  --color-ember-100: #ffe6de;
+
+  /* Flavour accents */
+  --color-cheddar: #f2a63b;
+  --color-cheddar-ink: #6b4009;
+  --color-jalapeno: #7ce04f;
+  --color-jalapeno-ink: #234c11;
+  --color-tomato: #e0432b;
+  --color-tomato-ink: #5e1408;
+  --color-truffle: #8f7c5f;
+  --color-truffle-ink: #3b3122;
+  --color-garlic: #d9c48d;
+  --color-garlic-ink: #55461f;
+  --color-chili: #b8431f;
+  --color-chili-ink: #4d1707;
+
+  /* Radii */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.625rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.25rem;
+  --radius-3xl: 3rem;
+
+  /* Type families (wired to next/font in layout.tsx) */
+  --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Editorial display scale */
+  --text-display-xs: clamp(1.75rem, 4.2vw, 2.5rem);
+  --text-display-sm: clamp(2.1rem, 6vw, 3.5rem);
+  --text-display-md: clamp(2.6rem, 8vw, 5rem);
+  --text-display-lg: clamp(3rem, 11vw, 7.5rem);
+  --text-display-xl: clamp(3.4rem, 15vw, 12rem);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-steam: steam 4.5s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+  --animate-float-slow: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(6%) scale(0.9);
+  }
+  35% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-55%) scale(1.35);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ─── Base ─────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --header-height: 4.25rem;
+    color-scheme: light;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bone);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+
+  /* Visible, branded focus ring everywhere */
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  /* Chrome/Safari number input spinners off */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ─── Utilities ────────────────────────────────────────────── */
+
+@utility container-full {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 96rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 3rem;
+  }
+}
+
+/* Kicker / eyebrow label */
+@utility kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Subtle paper grain for large flat areas */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility glass {
+  background-color: color-mix(in oklab, var(--color-bone-100) 62%, transparent);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid color-mix(in oklab, white 45%, transparent);
+}
+
+@utility glass-ink {
+  background-color: color-mix(in oklab, var(--color-ink) 55%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid color-mix(in oklab, white 12%, transparent);
+}
+
+/* Hides scrollbar on deliberate horizontal scrollers */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility edge-fade-x {
+  --edge-fade: linear-gradient(
+    to right,
+    transparent,
+    black 3.5rem,
+    black calc(100% - 3.5rem),
+    transparent
+  );
+  mask-image: var(--edge-fade);
+  -webkit-mask-image: var(--edge-fade);
+}
+
+/* Underline that animates in on hover/focus */
+@utility link-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1.5px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+
+  &:hover::after,
+  &:focus-visible::after,
+  &[data-active="true"]::after {
+    transform: scaleX(1);
+  }
+}
+
+@utility press {
+  transition:
+    transform 0.18s var(--ease-out-expo),
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
