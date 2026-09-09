@@ -50,8 +50,8 @@ export function SiteHeader() {
             : "border-b border-transparent bg-transparent",
         )}
       >
-        <div className="container-full flex h-(--header-height) items-center justify-between gap-4">
-          <div className="flex items-center gap-8">
+        <div className="container-full flex h-(--header-height) items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-8">
             <WordmarkLink className="text-[1.5rem]" />
             <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
               {primaryNav.map((item) => {
@@ -71,8 +71,8 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="flex items-center gap-1 sm:gap-2">
-            <Button href="/survey" size="sm" variant="accentSoft" className="px-3 sm:px-4">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+            <Button href="/survey" size="sm" variant="accentSoft" className="px-3 text-[0.78rem] sm:px-4 sm:text-[0.8125rem]">
               Take a survey
             </Button>
             <button

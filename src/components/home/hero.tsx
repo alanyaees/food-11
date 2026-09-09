@@ -60,15 +60,15 @@ export function Hero() {
       />
 
       <div className="container-full relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:gap-10">
-        <div className="relative z-2 max-w-2xl">
+        <div className="relative z-2 mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
           <h1
             id="hero-heading"
-            className="text-[clamp(2.9rem,7.4vw,5.25rem)] leading-[0.87] tracking-[-0.045em] uppercase"
+            className="text-[clamp(2.55rem,8vw,5.25rem)] leading-[0.87] tracking-[-0.045em] uppercase"
           >
             <RevealLines
               lines={[
                 "Comfort food.",
-                <span key="numbers" className="inline-flex items-baseline">
+                <span key="numbers" className="inline-flex items-baseline justify-center lg:justify-start">
                   Better
                   <span className="ml-[0.16em] text-ember">numbers.</span>
                 </span>,
@@ -80,7 +80,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-fg-muted sm:text-lg"
+            className="mx-auto mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-fg-muted sm:text-lg lg:mx-0"
           >
             {brand.shortPitch}
           </motion.p>
@@ -89,7 +89,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
           >
             <Button href="/shop" size="lg" className="group">
               Explore meals
@@ -107,7 +107,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6 sm:mt-12 lg:grid-cols-3"
+            className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-3 border-t border-line pt-6 sm:mt-12 sm:gap-4 lg:mx-0"
           >
             {[
               { label: "Protein", value: `36–45 g` },
@@ -119,7 +119,7 @@ export function Hero() {
             ].map((stat) => (
               <div key={stat.label} className="min-w-0">
                 <dt className="kicker text-fg-subtle">{stat.label}</dt>
-                <dd className="num font-display mt-1.5 text-xl font-extrabold tracking-tight sm:text-2xl">
+                <dd className="num font-display mt-1.5 text-[1.05rem] font-extrabold tracking-tight sm:text-2xl">
                   {stat.value}
                 </dd>
               </div>
