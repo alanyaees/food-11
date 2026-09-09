@@ -21,7 +21,7 @@ export default function NotFound() {
               Back home
             </Button>
             <Button href="/shop" size="lg" variant="outline">
-              Shop meals
+              Explore meals
             </Button>
           </div>
         </div>

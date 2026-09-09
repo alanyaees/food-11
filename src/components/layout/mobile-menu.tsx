@@ -14,9 +14,9 @@ import { MacroModeToggle } from "@/components/features/macro-mode-toggle";
 const secondary = [
   { label: "Compare a meal", href: "/nutrition#compare" },
   { label: "What should I eat?", href: "/shop#finder" },
+  { label: "Student survey", href: "/survey" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
-  { label: "Your account", href: "/account" },
 ];
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -59,8 +59,8 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         </nav>
 
         <div className="px-5 pt-6">
-          <Button href="/build-a-box" onClick={onClose} variant="accent" size="lg" block>
-            Build your box
+          <Button href="/survey" onClick={onClose} variant="accent" size="lg" block>
+            Take a survey
           </Button>
         </div>
 
@@ -100,7 +100,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                 className="flex items-center gap-1 py-2 text-sm text-on-ink-muted transition-colors hover:text-on-ink"
               >
                 {item.label}
-                <ArrowUpRight className="size-3.5" aria-hidden />
+                <ArrowUpRight className="size-3.5 opacity-50" aria-hidden />
               </Link>
             </li>
           ))}

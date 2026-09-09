@@ -1,0 +1,21 @@
+FULL. bag sticker — print spec
+================================
+
+Bag (measured): ~13 cm wide × 20.5 cm tall frosted zip pouch
+Orange zip seal ~matches brand ember #ff4a1c
+
+Primary sticker to print:
+  File:     full-sticker-9cm-white.png
+  Trim:     9.00 × 5.32 cm
+  Resolution: 300 DPI
+  Colors:   Ink #0e0e0c + ember #ff4a1c on white
+  Finish:   Matte vinyl preferred (matches frosted bag)
+  Cut:      Rounded rectangle, ~3–4 mm corner radius
+  Qty note: Place centered on bag face to cover existing ZIPIT print
+
+Optional:
+  full-sticker-9cm-white-bleed.png — same art + 3 mm bleed all sides
+  full-sticker-9cm-diecut.png     — transparent / kiss-cut to wordmark
+  full-sticker-7cm-white.png      — smaller alternate
+
+Do not scale below 300 DPI.

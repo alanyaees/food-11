@@ -12,8 +12,8 @@ export function CtaBand({
   kicker,
   titleLines,
   lead,
-  primary = { label: "Shop meals", href: "/shop" },
-  secondary = { label: "Build a box", href: "/build-a-box" },
+  primary = { label: "Explore meals", href: "/shop" },
+  secondary = { label: "Take a survey", href: "/survey" },
   note,
   className,
 }: {

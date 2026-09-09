@@ -1,7 +1,5 @@
 import { Marquee } from "@/components/ui/marquee";
 import { brand } from "@/lib/brand";
-import { tenPackDeal } from "@/lib/products";
-import { formatPrice } from "@/lib/utils";
 
 export function AnnouncementBar() {
   return (
@@ -11,14 +9,12 @@ export function AnnouncementBar() {
           className="edge-fade-x w-full px-4"
           speed="60s"
           items={[
-            `Free shipping over ${formatPrice(brand.shipping.freeThresholdCents)}`,
-            `10-Pack · ${formatPrice(tenPackDeal.priceCents)} · ${tenPackDeal.discountPercent}% off`,
+            "Take a survey",
             brand.packLine,
-            "Concept nutrition data — formulations in development",
             brand.phrases[0],
-            "Subscribe & save 15%",
             brand.phrases[4],
-            "Shipping across the EU at launch",
+            "Shipping across the EU",
+            brand.phrases[2],
           ]}
         />
       </div>

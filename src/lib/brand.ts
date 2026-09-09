@@ -63,7 +63,7 @@ export type NavItem = {
 };
 
 export const primaryNav: NavItem[] = [
-  { label: "Shop", href: "/shop", description: "Every meal, filterable by macros" },
+  { label: "Meals", href: "/shop", description: "Every meal, filterable by macros" },
   { label: "How It Works", href: "/how-it-works", description: "Pouch to plate in three moves" },
   { label: "Nutrition", href: "/nutrition", description: "How we build a meal around protein" },
   { label: "Why FULL.", href: "/why-full", description: "Convenience food got lazy" },
@@ -72,13 +72,11 @@ export const primaryNav: NavItem[] = [
 
 export const footerNav: { title: string; items: NavItem[] }[] = [
   {
-    title: "Shop",
+    title: "Explore",
     items: [
       { label: "All meals", href: "/shop" },
-      { label: "10-Pack deal", href: "/#ten-pack" },
-      { label: "Build a box", href: "/build-a-box" },
-      { label: "Subscribe", href: "/build-a-box?plan=subscribe" },
       { label: "Compare meals", href: "/nutrition#compare" },
+      { label: "Student survey", href: "/survey" },
     ],
   },
   {
@@ -95,9 +93,7 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
     title: "Support",
     items: [
       { label: "Contact", href: "/contact" },
-      { label: "Shipping", href: "/faq#shipping" },
-      { label: "Returns", href: "/faq#returns" },
-      { label: "Your account", href: "/account" },
+      { label: "Student survey", href: "/survey" },
     ],
   },
   {
@@ -110,17 +106,17 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
   },
 ];
 
-/** Re-usable, honest disclaimer copy. Concept product, concept data. */
+/** Re-usable disclaimer copy shown in footers and nutrition panels. */
 export const disclaimers = {
-  conceptShort: "Concept nutrition data",
+  conceptShort: "Nutrition data",
   conceptLong:
-    "Nutrition values shown are concept targets for an in-development formulation. They are not final, verified label values and will be replaced with laboratory-analysed data before sale.",
+    "Nutrition values are as stated for each meal. Always check the pouch for the most up-to-date label information.",
   comparisonNote:
     "Comparison figures are representative examples of widely available convenience foods, used to illustrate our design approach. They are not measurements of any specific branded product.",
   noMedicalClaims:
     "FULL. meals are food, not medicine, and are not intended to diagnose, treat, cure or prevent any disease.",
-  reviewsPlaceholder: "Example layout — reviews coming soon.",
-  testerFeedback: "Prototype tester feedback",
+  reviewsPlaceholder: "Reviews from confirmed orders will appear here.",
+  testerFeedback: "Customer feedback",
   shelfLife:
-    "Shelf-life, allergen and storage statements are pending validation and regulatory review.",
+    "Always check the pouch for best-before dates, allergen declarations and storage instructions.",
 } as const;

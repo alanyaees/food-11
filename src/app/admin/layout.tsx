@@ -70,11 +70,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-fg-muted">{access.reason}</p>
           <div className="mt-6 flex justify-center gap-3">
-            <Button href="/account/sign-in" size="sm">
-              Sign in
-            </Button>
             <Button href="/" variant="outline" size="sm">
-              Back to the shop
+              Back to the site
             </Button>
           </div>
         </div>

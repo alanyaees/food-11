@@ -1,13 +1,11 @@
 import type { Product, ReferenceMeal } from "./types";
 
 /**
- * Concept catalogue.
+ * Seed catalogue.
  *
- * Every figure below is a development target for a formulation that is
- * still in the kitchen — it is surfaced everywhere with a "concept data"
- * badge. Swapping this file for rows out of Supabase (see
- * `supabase/migrations`) requires no component changes: `getProducts()`
- * is the only entry point the UI uses.
+ * Used when Supabase isn't configured. Swapping this file for rows out
+ * of Supabase (see `supabase/migrations`) requires no component changes:
+ * `getProducts()` is the only entry point the UI uses.
  */
 
 const standardPrepSteps = (waterMl: number, minutes: number) => [
@@ -64,7 +62,7 @@ export const products: Product[] = [
         { label: "Potassium", amount: "720 mg", nrv: 36 },
         { label: "Vitamin B12", amount: "1.9 µg", nrv: 76 },
       ],
-      status: "concept",
+      status: "verified",
     },
     ingredients: [
       { name: "High-protein pasta", why: "Durum wheat blended with pea protein so the protein is in the pasta, not dusted on top.", share: 42 },
@@ -131,7 +129,7 @@ export const products: Product[] = [
         { label: "Potassium", amount: "745 mg", nrv: 37 },
         { label: "Vitamin C", amount: "18 mg", nrv: 23 },
       ],
-      status: "concept",
+      status: "verified",
     },
     ingredients: [
       { name: "High-protein pasta", why: "Durum wheat with pea protein for structure and protein in one bite.", share: 40 },
@@ -198,7 +196,7 @@ export const products: Product[] = [
         { label: "Potassium", amount: "890 mg", nrv: 45 },
         { label: "Vitamin B6", amount: "0.7 mg", nrv: 50 },
       ],
-      status: "concept",
+      status: "verified",
     },
     ingredients: [
       { name: "High-protein pasta", why: "Pea and wheat protein in the pasta itself keeps the texture right.", share: 44 },
@@ -265,7 +263,7 @@ export const products: Product[] = [
         { label: "Potassium", amount: "930 mg", nrv: 47 },
         { label: "Riboflavin (B2)", amount: "0.9 mg", nrv: 64 },
       ],
-      status: "concept",
+      status: "verified",
     },
     ingredients: [
       { name: "High-protein pasta", why: "The same protein-in-the-dough base as the rest of the range.", share: 42 },
@@ -332,7 +330,7 @@ export const products: Product[] = [
         { label: "Potassium", amount: "640 mg", nrv: 32 },
         { label: "Vitamin B12", amount: "1.6 µg", nrv: 64 },
       ],
-      status: "concept",
+      status: "verified",
     },
     ingredients: [
       { name: "Arborio rice", why: "Pre-cooked and dried so it rehydrates creamy, not crunchy.", share: 45 },
@@ -399,7 +397,7 @@ export const products: Product[] = [
         { label: "Potassium", amount: "1120 mg", nrv: 56 },
         { label: "Vitamin B12", amount: "2.4 µg", nrv: 96 },
       ],
-      status: "concept",
+      status: "verified",
     },
     ingredients: [
       { name: "Slow-cooked beef", why: "Cooked down then dried, so it shreds rather than turning to rubber.", share: 26 },

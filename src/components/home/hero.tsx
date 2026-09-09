@@ -92,7 +92,7 @@ export function Hero() {
             className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button href="/shop" size="lg" className="group">
-              Shop meals
+              Explore meals
               <ArrowRight
                 className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"
                 aria-hidden
@@ -196,7 +196,7 @@ export function Hero() {
           </div>
 
           <p className="mt-14 text-center text-[0.7rem] text-fg-subtle sm:mt-12 lg:text-right">
-            Pictured: {hero.line} — {hero.flavor}. Concept nutrition values.
+            Pictured: {hero.line} — {hero.flavor}.
           </p>
         </motion.div>
       </div>

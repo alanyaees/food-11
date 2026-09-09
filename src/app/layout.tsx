@@ -5,11 +5,9 @@ import { absoluteUrl } from "@/lib/utils";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ToastProvider } from "@/components/providers/toast-provider";
-import { CartProvider } from "@/components/providers/cart-provider";
 import { MacroModeProvider } from "@/components/providers/macro-mode-provider";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { CartDrawer } from "@/components/cart/cart-drawer";
 import { CookieBanner } from "@/components/layout/cookie-banner";
 import "./globals.css";
 
@@ -93,21 +91,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <ToastProvider>
           <MacroModeProvider>
-            <CartProvider>
-              <a
-                href="#main"
-                className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-on-ink"
-              >
-                Skip to content
-              </a>
-              <SiteHeader />
-              <main id="main" className="relative">
-                {children}
-              </main>
-              <SiteFooter />
-              <CartDrawer />
-              <CookieBanner />
-            </CartProvider>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-on-ink"
+            >
+              Skip to content
+            </a>
+            <SiteHeader />
+            <main id="main" className="relative">
+              {children}
+            </main>
+            <SiteFooter />
+            <CookieBanner />
           </MacroModeProvider>
         </ToastProvider>
       </body>

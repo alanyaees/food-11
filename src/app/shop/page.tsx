@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ShopBrowser } from "@/components/shop/shop-browser";
-import { ComboDeal } from "@/components/shop/combo-deal";
 import { MealFinder } from "@/components/features/meal-finder";
 import { ConceptBadge } from "@/components/ui/concept-badge";
 import { ProductCardSkeleton } from "@/components/ui/skeleton";
@@ -13,12 +12,12 @@ import { breadcrumbSchema } from "@/lib/seo";
 import { absoluteUrl, proteinDensity } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Shop all meals",
+  title: "All meals",
   description:
     "Six shelf-stable, high-protein meals: mac & cheese, pasta, risotto and chili. Filter by protein, calories, prep time and dietary preference.",
   alternates: { canonical: "/shop" },
   openGraph: {
-    title: `Shop all meals · ${brand.name}`,
+    title: `All meals · ${brand.name}`,
     description: brand.shortPitch,
     url: absoluteUrl("/shop"),
   },
@@ -96,8 +95,6 @@ export default function ShopPage() {
           </Reveal>
         </div>
       </header>
-
-      <ComboDeal compact />
 
       <Suspense
         fallback={

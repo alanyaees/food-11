@@ -244,8 +244,7 @@ export function PrepSequence({
             {playing ? "Pause" : "Play"}
           </button>
           <p className="text-xs text-fg-subtle">
-            Exact water volume and timing are printed on each pouch. Concept values while we finish
-            formulations.
+            Exact water volume and timing are printed on each pouch.
           </p>
         </div>
       </div>

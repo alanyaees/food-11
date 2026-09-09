@@ -2,15 +2,13 @@ import Link from "next/link";
 import { Flame, Timer } from "lucide-react";
 import { BrandImage } from "@/components/brand/brand-image";
 import { Pouch } from "@/components/brand/pouch";
-import { QuickAdd } from "@/components/product/quick-add";
 import { accentVars } from "@/lib/accents";
 import type { Product } from "@/lib/types";
-import { cn, formatPrice, proteinDensity } from "@/lib/utils";
+import { cn, proteinDensity } from "@/lib/utils";
 
 /**
- * Ecommerce card: photography by default, packaging on hover — so the
- * food sells and the pack does the brand work. Quick-add never
- * navigates away.
+ * Showcase card: photography by default, packaging on hover — so the
+ * food leads and the pack does the brand work.
  */
 export function ProductCard({
   product,
@@ -43,7 +41,6 @@ export function ProductCard({
             priority={priority}
             className="absolute inset-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] group-hover:opacity-0"
           />
-          {/* Packaging reveal */}
           <div
             aria-hidden
             className="absolute inset-0 grid place-items-center bg-[radial-gradient(120%_100%_at_50%_0%,var(--accent-soft)_0%,#efeade_65%,#e4ddcd_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -59,7 +56,6 @@ export function ProductCard({
             </div>
           </div>
 
-          {/* Protein flag */}
           <div className="absolute top-3 left-3 flex flex-col gap-1.5">
             <span
               className="num inline-flex items-baseline gap-0.5 rounded-full px-2.5 py-1.5 text-[0.7rem] leading-none font-bold text-ink shadow-sm"
@@ -78,16 +74,13 @@ export function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col pt-4">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <p className="kicker text-fg-subtle">{product.line}</p>
-            <h3 className="mt-1.5 text-[1.0625rem] leading-tight font-semibold tracking-[-0.02em]">
-              <Link href={`/products/${product.slug}`} className="link-underline">
-                {product.flavor}
-              </Link>
-            </h3>
-          </div>
-          <p className="num shrink-0 text-sm font-semibold">{formatPrice(product.priceCents)}</p>
+        <div className="min-w-0">
+          <p className="kicker text-fg-subtle">{product.line}</p>
+          <h3 className="mt-1.5 text-[1.0625rem] leading-tight font-semibold tracking-[-0.02em]">
+            <Link href={`/products/${product.slug}`} className="link-underline">
+              {product.flavor}
+            </Link>
+          </h3>
         </div>
 
         <p className="mt-2 line-clamp-2 text-[0.82rem] leading-relaxed text-fg-muted">
@@ -116,13 +109,12 @@ export function ProductCard({
           </div>
         </dl>
 
-        <div className="mt-4 flex items-center gap-2">
-          <QuickAdd product={product} className="flex-1" />
+        <div className="mt-4">
           <Link
             href={`/products/${product.slug}`}
-            className="press inline-flex h-10 items-center rounded-full border border-ink/20 px-4 text-xs font-bold tracking-tight uppercase hover:border-ink"
+            className="press inline-flex h-10 w-full items-center justify-center rounded-full border border-ink/20 px-4 text-xs font-bold tracking-tight uppercase hover:border-ink"
           >
-            Details
+            View meal
           </Link>
         </div>
       </div>

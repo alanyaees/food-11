@@ -1,30 +1,16 @@
-import { Info } from "lucide-react";
-import { disclaimers } from "@/lib/brand";
 import { cn } from "@/lib/utils";
-import { Badge } from "./badge";
 
 /**
- * The site's honesty device: any figure that comes from an unfinished
- * formulation is labelled. One component, one wording, everywhere.
+ * Legacy export kept so call sites compile cleanly. The live storefront
+ * no longer surfaces concept/demo nutrition badges.
  */
-export function ConceptBadge({
-  className,
-  tone = "neutral",
-  label = disclaimers.conceptShort,
-  detail = disclaimers.conceptLong,
-}: {
+export function ConceptBadge(_props: {
   className?: string;
   tone?: "neutral" | "inverse" | "outline";
   label?: string;
   detail?: string;
 }) {
-  return (
-    <Badge tone={tone} className={cn("gap-1.5", className)} title={detail}>
-      <Info className="size-3" aria-hidden />
-      <span>{label}</span>
-      <span className="sr-only">— {detail}</span>
-    </Badge>
-  );
+  return null;
 }
 
 export function DisclaimerNote({

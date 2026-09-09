@@ -16,8 +16,8 @@ export const faqCategories = [
   { id: "product", label: "Product", blurb: "What this actually is." },
   { id: "nutrition", label: "Nutrition", blurb: "Protein, allergens, diets." },
   { id: "preparation", label: "Preparation", blurb: "Water, time, technique." },
-  { id: "subscription", label: "Subscription & orders", blurb: "Billing, skipping, leaving." },
-  { id: "shipping", label: "Shipping & returns", blurb: "Where, when, and what if." },
+  { id: "subscription", label: "Coming soon", blurb: "What launches look like." },
+  { id: "shipping", label: "Launch & storage", blurb: "Where, when, and shelf life." },
 ] as const;
 
 export type FaqCategoryId = (typeof faqCategories)[number]["id"];
@@ -287,7 +287,7 @@ export const faqItems: FaqItem[] = [
     ],
     answerText:
       "You choose the meals, the box size and the interval — monthly, every six weeks or every two months — and it repeats at a lower price per meal than one-off orders. We email before each box is prepared and charged, and that email is the moment to swap meals, change the size or skip a delivery. There is no minimum number of deliveries, no contract length and no cancellation fee.",
-    links: [{ label: "Build a box", href: "/build-a-box" }],
+    links: [{ label: "Explore meals", href: "/shop" }],
   },
   {
     id: "cancel",
@@ -301,7 +301,7 @@ export const faqItems: FaqItem[] = [
     ],
     answerText:
       "Yes — at any time, from your account, in a couple of clicks, with no notice period, no cancellation fee and no phone call. You can also skip a single delivery or pause indefinitely and keep your box configuration. Cancelling stops future deliveries but does not refund one already dispatched.",
-    links: [{ label: "Your account", href: "/account" }],
+    links: [{ label: "Contact us", href: "/contact" }],
   },
   {
     id: "when-charged",
@@ -324,7 +324,7 @@ export const faqItems: FaqItem[] = [
       "Any time before the next box is prepared. Swap flavours, change quantities, change the interval, or replace the whole selection — it is your box, not a fixed bundle.",
     answerText:
       "Yes, at any time before the next box is prepared. You can swap flavours, change quantities, change the delivery interval or replace the entire selection.",
-    links: [{ label: "Build a box", href: "/build-a-box" }],
+    links: [{ label: "Explore meals", href: "/shop" }],
   },
 
   /* ── Shipping & returns ──────────────────────────────────── */

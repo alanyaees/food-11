@@ -5,10 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { RotateCcw, Sparkles } from "lucide-react";
 import { BrandImage } from "@/components/brand/brand-image";
 import { Button } from "@/components/ui/button";
-import { QuickAdd } from "@/components/product/quick-add";
 import { accentVars } from "@/lib/accents";
 import { getProducts } from "@/lib/products";
-import { cn, formatPrice, proteinDensity } from "@/lib/utils";
+import { cn, proteinDensity } from "@/lib/utils";
 import type { Product } from "@/lib/types";
 
 type Hunger = "light" | "normal" | "starving";
@@ -216,13 +215,11 @@ export function MealFinder({ className }: { className?: string }) {
                 <p className="mt-2 text-sm leading-relaxed text-fg-muted">{result.reason}</p>
                 <p className="num mt-3 text-xs text-fg-muted">
                   {result.product.nutrition.protein} g protein ·{" "}
-                  {result.product.nutrition.calories} kcal · {result.product.prepMinutes} min ·{" "}
-                  {formatPrice(result.product.priceCents)}
+                  {result.product.nutrition.calories} kcal · {result.product.prepMinutes} min
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <QuickAdd product={result.product} label="Add to cart" />
-                  <Button href={`/products/${result.product.slug}`} variant="outline" size="sm">
-                    Details
+                  <Button href={`/products/${result.product.slug}`} size="sm">
+                    View meal
                   </Button>
                 </div>
               </motion.div>

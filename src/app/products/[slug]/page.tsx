@@ -3,12 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Flame, Timer } from "lucide-react";
 import { ProductGallery } from "@/components/product/product-gallery";
-import { PurchasePanel } from "@/components/product/purchase-panel";
 import { MacroGrid } from "@/components/product/macro-grid";
 import { ProductCard } from "@/components/product/product-card";
 import { NutritionLabel } from "@/components/features/nutrition-label";
 import { Accordion } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
 import { Reveal } from "@/components/ui/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -17,7 +17,7 @@ import { brand, disclaimers } from "@/lib/brand";
 import { getAsset } from "@/lib/assets";
 import { categoryLabels, dietaryLabels, getProductBySlug, getProductSlugs, getRelatedProducts } from "@/lib/products";
 import { breadcrumbSchema, productSchema } from "@/lib/seo";
-import { absoluteUrl, formatPrice, proteinDensity } from "@/lib/utils";
+import { absoluteUrl, proteinDensity } from "@/lib/utils";
 
 export function generateStaticParams() {
   return getProductSlugs().map((slug) => ({ slug }));
@@ -120,22 +120,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       ),
     },
     {
-      question: "Shipping & storage",
+      question: "Storage",
       answer: (
         <div className="space-y-2">
-          <p>
-            Free shipping over {formatPrice(brand.shipping.freeThresholdCents)}, otherwise{" "}
-            {formatPrice(brand.shipping.flatRateCents)} flat. Launch regions:{" "}
-            {brand.shipping.regions}
-          </p>
           <p>
             Store the pouch somewhere dry and out of direct sunlight — a cupboard, a desk drawer, a
             locker. No refrigeration before opening. Printed best-before dates and validated
             shelf-life figures follow stability testing.
           </p>
           <p>
-            Pre-launch orders are held and confirmed by email before dispatch; you can cancel any
-            unshipped order from your account.
+            Launch regions planned: {brand.shipping.regions}
           </p>
         </div>
       ),
@@ -227,10 +221,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </p>
 
             <div className="mt-6 flex flex-wrap items-baseline gap-x-4 gap-y-2">
-              <p className="num font-display text-3xl font-extrabold tracking-tight">
-                {formatPrice(product.priceCents)}
-              </p>
               <p className="num text-sm text-fg-muted">
+                {product.nutrition.protein} g protein
+                <span aria-hidden className="mx-2 text-line-strong">
+                  ·
+                </span>
+                {product.nutrition.calories} kcal
+                <span aria-hidden className="mx-2 text-line-strong">
+                  ·
+                </span>
                 {density} g protein per 100 kcal
                 <span aria-hidden className="mx-2 text-line-strong">
                   ·
@@ -240,8 +239,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </p>
             </div>
 
-            <div className="mt-7">
-              <PurchasePanel product={product} />
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button href="/shop" size="lg">
+                See all meals
+              </Button>
+              <Button href="/survey" variant="outline" size="lg">
+                Take a survey
+              </Button>
             </div>
 
             <div className="mt-8">

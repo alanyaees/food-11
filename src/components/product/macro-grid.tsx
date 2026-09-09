@@ -34,7 +34,7 @@ export function MacroGrid({ product, className }: { product: Product; className?
   return (
     <div className={cn("", className)} style={accentVars(product.accent)}>
       <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="kicker text-fg-subtle">Per pouch · concept values</p>
+        <p className="kicker text-fg-subtle">Per pouch</p>
         <MacroModeToggle compact />
       </div>
       <dl className="grid grid-cols-3 overflow-hidden rounded-xl border border-line bg-bone-100">

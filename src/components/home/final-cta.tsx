@@ -35,21 +35,21 @@ export function FinalCta() {
           </h2>
           <Reveal delay={0.12}>
             <p className="mx-auto mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-fg-muted">
-              Build a box of the flavours you actually want. Twelve meals, roughly 480 g of protein,
-              sitting in a drawer waiting for the day you have no time.
+              Browse the range, dig into the macros, and tell us what you&apos;d actually eat.
+              We&apos;re building FULL. in public.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href="/build-a-box" size="xl" className="group w-full sm:w-auto">
-                Build your box
+              <Button href="/shop" size="xl" className="group w-full sm:w-auto">
+                Explore the meals
                 <ArrowRight
                   className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                   aria-hidden
                 />
               </Button>
-              <Button href="/shop" size="xl" variant="outline" className="w-full sm:w-auto">
-                Browse single meals
+              <Button href="/survey" size="xl" variant="outline" className="w-full sm:w-auto">
+                Take a survey
               </Button>
             </div>
           </Reveal>

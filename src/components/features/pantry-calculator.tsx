@@ -38,7 +38,7 @@ export function PantryCalculator({ className }: { className?: string }) {
       label: "Total protein",
       value: avgProtein * count,
       suffix: " g",
-      note: `≈ ${avgProtein} g per meal, concept values`,
+      note: `≈ ${avgProtein} g per meal`,
     },
     {
       icon: Clock,

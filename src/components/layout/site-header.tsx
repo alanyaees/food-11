@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, Search, ShoppingBag, User } from "lucide-react";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { Menu } from "lucide-react";
 import { brand, primaryNav } from "@/lib/brand";
 import { cn } from "@/lib/utils";
-import { useCart } from "@/components/providers/cart-provider";
 import { WordmarkLink } from "@/components/brand/wordmark";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "./mobile-menu";
@@ -16,7 +15,6 @@ import { AnnouncementBar } from "./announcement-bar";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { totals, openCart } = useCart();
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +24,6 @@ export function SiteHeader() {
     setScrolled(value > 24);
   });
 
-  // Cmd/Ctrl-K opens search, as expected of a modern storefront.
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
@@ -75,45 +72,8 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-1 sm:gap-2">
-            <button
-              type="button"
-              onClick={() => setSearchOpen(true)}
-              className="press grid size-10 place-items-center rounded-full text-ink/70 hover:bg-ink/[0.06] hover:text-ink"
-              aria-label="Search meals"
-            >
-              <Search className="size-[1.15rem]" aria-hidden />
-            </button>
-            <Link
-              href="/account"
-              className="press hidden size-10 place-items-center rounded-full text-ink/70 hover:bg-ink/[0.06] hover:text-ink sm:grid"
-              aria-label="Your account"
-            >
-              <User className="size-[1.15rem]" aria-hidden />
-            </Link>
-            <button
-              type="button"
-              onClick={openCart}
-              className="press relative grid size-10 place-items-center rounded-full text-ink/70 hover:bg-ink/[0.06] hover:text-ink"
-              aria-label={`Open cart, ${totals.itemCount} item${totals.itemCount === 1 ? "" : "s"}`}
-            >
-              <ShoppingBag className="size-[1.15rem]" aria-hidden />
-              <AnimatePresence>
-                {totals.itemCount > 0 ? (
-                  <motion.span
-                    key={totals.itemCount}
-                    initial={{ scale: 0.4, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.4, opacity: 0 }}
-                    transition={{ duration: 0.28, ease: [0.34, 1.56, 0.64, 1] }}
-                    className="num absolute -top-0.5 -right-0.5 grid min-w-[1.15rem] place-items-center rounded-full bg-ember px-1 py-0.5 text-[0.65rem] leading-none font-bold text-white"
-                  >
-                    {totals.itemCount}
-                  </motion.span>
-                ) : null}
-              </AnimatePresence>
-            </button>
-            <Button href="/build-a-box" size="sm" className="ml-1 hidden md:inline-flex">
-              Build your box
+            <Button href="/survey" size="sm" variant="accentSoft" className="px-3 sm:px-4">
+              Take a survey
             </Button>
             <button
               type="button"
