@@ -86,15 +86,15 @@ export function ReviewsSection() {
               ))}
             </div>
             <Button href="/contact" variant="outline" size="sm" className="mt-5">
-              Join the tasting list
+              Leave feedback
             </Button>
           </div>
         </Reveal>
       </div>
 
       <DisclaimerNote className="mt-6">
-        Tasting-panel comments are paraphrased notes from internal product sessions and are shared
-        as development feedback, not as customer reviews or endorsements.
+        Early comments are paraphrased notes from product sessions and are shared as feedback, not
+        as customer reviews or endorsements.
       </DisclaimerNote>
     </section>
   );

@@ -1,7 +1,7 @@
 import { disclaimers } from "@/lib/brand";
 import { getProducts, referenceMeals } from "@/lib/products";
 import { proteinDensity } from "@/lib/utils";
-import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
+import { DisclaimerNote } from "@/components/ui/concept-badge";
 import { Reveal } from "@/components/ui/reveal";
 
 function range(values: number[], decimals = 0) {
@@ -16,7 +16,7 @@ function range(values: number[], decimals = 0) {
  *
  * Both columns are computed from data rather than typed in: the left
  * from the representative convenience meals in the catalogue, the right
- * from our own concept formulations. The calories row is included
+ * from our own meals. The calories row is included
  * precisely because we do not win it — a comparison you always win is
  * a comparison nobody should believe.
  */
@@ -74,7 +74,7 @@ export function TradeOffTable() {
       <div className="overflow-hidden rounded-2xl border border-line bg-bone-100">
         <table className="w-full border-collapse text-left">
           <caption className="sr-only">
-            Representative convenience meals compared with FULL. concept formulations, across
+            Representative convenience meals compared with FULL. meals, across
             protein, protein density, fibre, energy and time to eat.
           </caption>
           <thead>
@@ -125,7 +125,6 @@ export function TradeOffTable() {
         </table>
 
         <div className="space-y-3 border-t border-line px-4 py-5 sm:px-6">
-          <ConceptBadge />
           <DisclaimerNote>{disclaimers.comparisonNote}</DisclaimerNote>
         </div>
       </div>

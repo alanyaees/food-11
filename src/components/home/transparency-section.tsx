@@ -33,8 +33,8 @@ export function TransparencySection() {
             </h2>
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-md text-[1.0625rem] leading-relaxed text-fg-muted">
-                Every ingredient is here in plain English, with the reason it earned its place. If
-                something is a formulation target rather than a lab result, we say so.
+                Every ingredient is here in plain English, with the reason it earned its place.
+                Turn the pack around — the label matches what you see here.
               </p>
             </Reveal>
 

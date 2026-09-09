@@ -1,6 +1,5 @@
 import { BrandImage } from "@/components/brand/brand-image";
 import { Button } from "@/components/ui/button";
-import { ConceptBadge } from "@/components/ui/concept-badge";
 import { Counter } from "@/components/ui/counter";
 import { Reveal } from "@/components/ui/reveal";
 import { getProductBySlug } from "@/lib/products";
@@ -121,7 +120,6 @@ export function MacroHero() {
               <Button href="/nutrition" variant="outlineInverse" size="lg">
                 See the full label
               </Button>
-              <ConceptBadge tone="inverse" />
             </div>
           </Reveal>
         </div>

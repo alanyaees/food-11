@@ -123,9 +123,9 @@ export function PantryCalculator({ className }: { className?: string }) {
       </dl>
 
       <DisclaimerNote className="mt-6">
-        Estimates based on the current concept range: average dry weight {avgWeight} g, average
-        preparation {avgPrep.toFixed(1)} minutes and {formatPrice(averageMealPriceCents())} average
-        meal price. Time comparison is illustrative, not a measured study.
+        Estimates based on the current range: average dry weight {avgWeight} g, average preparation{" "}
+        {avgPrep.toFixed(1)} minutes and {formatPrice(averageMealPriceCents())} average meal price.
+        Time comparison is illustrative, not a measured study.
       </DisclaimerNote>
     </section>
   );

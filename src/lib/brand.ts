@@ -52,7 +52,7 @@ export const brand = {
   shipping: {
     freeThresholdCents: 4500,
     flatRateCents: 490,
-    regions: "The Netherlands, Belgium, Germany, France and Ireland at launch.",
+    regions: "The Netherlands, Belgium, Germany, France and Ireland.",
   },
 } as const;
 

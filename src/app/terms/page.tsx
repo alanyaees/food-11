@@ -6,7 +6,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const title = "Terms";
 const description =
-  "Terms for using the FULL. site and, from launch, for buying from us: pre-launch status, ordering, VAT, shipping, EU withdrawal rights, food safety, subscriptions and liability.";
+  "Terms for using the FULL. site and buying from us: ordering, VAT, shipping, EU withdrawal rights, food safety, subscriptions and liability.";
 
 export const metadata: Metadata = {
   title,

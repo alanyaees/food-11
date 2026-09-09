@@ -7,7 +7,7 @@ import { accents } from "@/lib/accents";
 import { disclaimers } from "@/lib/brand";
 import { getProducts, referenceMeals } from "@/lib/products";
 import { cn, proteinDensity } from "@/lib/utils";
-import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
+import { DisclaimerNote } from "@/components/ui/concept-badge";
 import { Button } from "@/components/ui/button";
 
 type MetricKey = "protein" | "density" | "calories" | "fibre" | "prep";
@@ -252,7 +252,6 @@ export function MacroCompare({
       </ul>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <ConceptBadge tone={inverse ? "inverse" : "neutral"} />
         {showCta ? (
           <Button
             href={`/products/${product.slug}`}

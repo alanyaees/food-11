@@ -9,7 +9,7 @@ import { NutritionLabel } from "@/components/features/nutrition-label";
 import { Accordion } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
+import { DisclaimerNote } from "@/components/ui/concept-badge";
 import { Reveal } from "@/components/ui/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { accents } from "@/lib/accents";
@@ -149,9 +149,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             like food, because it is.
           </p>
           <p>
-            <span className="font-semibold text-ink">Why is the protein figure “concept”?</span>{" "}
-            Because the recipe is still being finalised. Every number here is a formulation target
-            and will be replaced with laboratory-analysed label values before anything is sold.{" "}
+            <span className="font-semibold text-ink">Where do the nutrition figures come from?</span>{" "}
+            From the recipe specification for each meal. Always check the pouch for the legal label
+            if you need the authoritative values.{" "}
             <Link href="/nutrition#data" className="link-underline font-semibold text-ink">
               How we handle nutrition data
             </Link>
@@ -252,9 +252,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <MacroGrid product={product} />
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <ConceptBadge />
-              <DisclaimerNote className="flex-1">{disclaimers.conceptLong}</DisclaimerNote>
+            <div className="mt-4">
+              <DisclaimerNote>{disclaimers.conceptLong}</DisclaimerNote>
             </div>
 
             <div className="mt-8 border-t border-line">

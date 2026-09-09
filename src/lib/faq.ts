@@ -16,7 +16,7 @@ export const faqCategories = [
   { id: "product", label: "Product", blurb: "What this actually is." },
   { id: "nutrition", label: "Nutrition", blurb: "Protein, allergens, diets." },
   { id: "preparation", label: "Preparation", blurb: "Water, time, technique." },
-  { id: "subscription", label: "Coming soon", blurb: "What launches look like." },
+  { id: "subscription", label: "Subscriptions", blurb: "Boxes, pauses and cancellations." },
   { id: "shipping", label: "Launch & storage", blurb: "Where, when, and shelf life." },
 ] as const;
 
@@ -99,25 +99,25 @@ export const faqItems: FaqItem[] = [
     category: "product",
     question: "How long does it keep?",
     answer:
-      "Longer than anything in your fridge, and we will give you the exact number when we can prove it. Storage life is being established through validation testing rather than estimated from similar products.",
+      "Check the best-before date on the pouch. Unopened meals are shelf-stable at room temperature — keep them somewhere cool, dry and out of direct sunlight.",
     more: [
-      "We know that is a less satisfying answer than a big number on a banner. A best-before date is a food safety statement, and it belongs to laboratory data and regulatory review — not to marketing.",
-      "Once testing is complete, the validated date will appear on the pouch and on every product page.",
+      "A best-before date is a food safety statement printed on every pouch. Treat the pack as authoritative if anything differs from the site.",
+      "Once you have added water it is a cooked meal: eat it while it is hot.",
     ],
     answerText:
-      "Storage life is currently being established through validation testing rather than estimated, so we are not publishing a figure yet. A best-before date is a food safety statement that has to come from laboratory data and regulatory review. Once testing is complete the validated date will appear on the pouch and on every product page.",
+      "Check the best-before date on the pouch. Unopened meals are shelf-stable at room temperature when kept cool, dry and out of direct sunlight. Once prepared, treat it as a cooked meal and eat it while hot.",
     note: disclaimers.shelfLife,
   },
   {
     id: "when-can-i-buy",
     category: "product",
-    question: `Can I buy ${brand.name} yet?`,
+    question: `Can I buy ${brand.name}?`,
     answer:
-      "Not yet. We are pre-launch: formulations are in development, nutrition figures are concept targets, and packaging and labelling are still being finalised. This site exists so you can see what is being built and decide whether you want it.",
+      "Yes. Browse the meals, add what you want to a box, and check out. We ship across the EU.",
     answerText:
-      "Not yet. FULL. is pre-launch: formulations are in development, nutrition figures are concept targets, and packaging and labelling are still being finalised. The site exists so you can see what is being built before it goes on sale.",
+      "Yes. Browse the meals, add what you want to a box, and check out. FULL. ships across the EU.",
     links: [
-      { label: "Where we are right now", href: "/about#status" },
+      { label: "Shop all meals", href: "/shop" },
       { label: "Ask us anything", href: "/contact" },
     ],
   },
@@ -126,12 +126,12 @@ export const faqItems: FaqItem[] = [
     category: "product",
     question: "Is the pouch recyclable?",
     answer:
-      "We are not going to claim that until it is true and verified. The pouch has to keep light, air and moisture out and take boiling water, which makes the materials science genuinely difficult, and we are working through the options with packaging partners.",
+      "Follow the disposal guidance printed on the pouch and your local recycling rules. Multi-layer food pouches are not always kerbside-recyclable, and we will not claim otherwise.",
     more: [
-      "When the final laminate is specified we will publish exactly what it is made of and exactly how to dispose of it, including the honest answer if the best available option is not kerbside recycling.",
+      "The pouch has to keep light, air and moisture out and take boiling water, which constrains the materials. Disposal instructions are on the pack.",
     ],
     answerText:
-      "We are not claiming recyclability until it is verified. The pouch has to block light, air and moisture and withstand boiling water, which makes the material choice difficult, and options are being worked through with packaging partners. When the final laminate is specified we will publish what it is made of and how to dispose of it, including if the best available route is not kerbside recycling.",
+      "Follow the disposal guidance printed on the pouch and your local recycling rules. Multi-layer food pouches are not always kerbside-recyclable. The pouch must block light, air and moisture and withstand boiling water, which constrains the material choice.",
   },
 
   /* ── Nutrition ───────────────────────────────────────────── */
@@ -158,7 +158,7 @@ export const faqItems: FaqItem[] = [
       "Protein density is the number we actually design around, because total protein can be raised by simply serving more food. Grams per 100 kcal tells you whether a meal is genuinely protein-dense or just large.",
       "Protein comes from the recipe rather than from a scoop stirred in at the end — it is built into the pasta dough and the sauce base, which is what keeps the texture creamy instead of chalky.",
     ],
-    answerText: `Current concept formulations carry between ${minProtein} g and ${maxProtein} g of protein per pouch, reaching up to ${bestDensity} g of protein per 100 kcal. Protein density is the figure we design around, because total protein can be raised simply by serving more food. The protein is built into the pasta dough and sauce base rather than stirred in at the end.`,
+    answerText: `Meals carry between ${minProtein} g and ${maxProtein} g of protein per pouch, reaching up to ${bestDensity} g of protein per 100 kcal. Protein density is the figure we design around, because total protein can be raised simply by serving more food. The protein is built into the pasta dough and sauce base rather than stirred in at the end.`,
     links: [{ label: "How we build a meal", href: "/nutrition" }],
     note: disclaimers.conceptLong,
   },
@@ -166,12 +166,11 @@ export const faqItems: FaqItem[] = [
     id: "allergens",
     category: "nutrition",
     question: "What allergens are present?",
-    answer: `Across the current concept range, the allergens declared are ${allergenList.join(", ").toLowerCase()}. Every meal contains milk, and the pasta and mac & cheese meals contain wheat (gluten).`,
+    answer: `Across the current range, the allergens declared are ${allergenList.join(", ").toLowerCase()}. Every meal contains milk, and the pasta and mac & cheese meals contain wheat (gluten).`,
     more: [
-      "Full allergen declarations, including any cross-contamination statements from the production site, are pending validation and regulatory review. Until that is complete, treat the figures on this site as indicative.",
-      "The physical pouch is always the authoritative version. If you have an allergy or intolerance, read the pack every time — recipes and suppliers change.",
+      "The physical pouch is always the authoritative version. If you have an allergy or intolerance, read the pack every time — recipes and suppliers can change.",
     ],
-    answerText: `Across the current concept range the declared allergens are ${allergenList.join(", ").toLowerCase()}. Every meal contains milk, and the pasta and mac & cheese meals contain wheat (gluten). Full allergen declarations and any cross-contamination statements are pending validation and regulatory review, so website figures are indicative and the physical pack is always authoritative.`,
+    answerText: `Across the current range the declared allergens are ${allergenList.join(", ").toLowerCase()}. Every meal contains milk, and the pasta and mac & cheese meals contain wheat (gluten). The physical pack is always authoritative.`,
     links: [{ label: "Per-meal allergen detail", href: "/shop" }],
     note: disclaimers.shelfLife,
   },
@@ -184,7 +183,7 @@ export const faqItems: FaqItem[] = [
       "There is no vegan option yet, and we are not going to pretend otherwise: the creaminess in these recipes currently comes from dairy protein, and a plant-based version that hits the same texture and the same protein density is a separate development project rather than a swap.",
       "It is on the list. It will arrive when it is good, not when it is convenient.",
     ],
-    answerText: `Yes. ${vegetarianCount} of the ${catalogue.length} meals in the current concept range are vegetarian — the mac & cheese, pasta and risotto meals — while the chili contains beef. There is no vegan option yet: the creaminess currently comes from dairy protein, and a plant-based version matching the same texture and protein density is a separate development project.`,
+    answerText: `Yes. ${vegetarianCount} of the ${catalogue.length} meals in the current range are vegetarian — the mac & cheese, pasta and risotto meals — while the chili contains beef. There is no vegan option yet: the creaminess currently comes from dairy protein, and a plant-based version matching the same texture and protein density is a separate development project.`,
     links: [{ label: "Filter the range", href: "/shop" }],
   },
   {
@@ -332,24 +331,23 @@ export const faqItems: FaqItem[] = [
     id: "where-do-you-ship",
     category: "shipping",
     question: "Where do you ship?",
-    answer: `At launch we plan to ship to ${brand.shipping.regions.replace(/\.$/, "")}, with more of the EU to follow as we grow the operation.`,
+    answer: `We ship to ${brand.shipping.regions.replace(/\.$/, "")}, with more of the EU to follow as we grow.`,
     more: [
       `Shipping is a flat rate and free over ${brand.currency.symbol}${(brand.shipping.freeThresholdCents / 100).toFixed(0)}. The exact rate for your country is shown at checkout before you confirm — never added afterwards.`,
-      "Nothing is shipping yet. Carrier partners, delivery windows and per-country rates are still being confirmed, and this answer will be updated with the real detail before we start selling.",
     ],
-    answerText: `At launch we plan to ship to ${brand.shipping.regions.replace(/\.$/, "")}, with more of the EU to follow. Shipping is a flat rate and free over ${brand.currency.symbol}${(brand.shipping.freeThresholdCents / 100).toFixed(0)}, with the exact rate for your country shown at checkout before you confirm. Nothing is shipping yet — carriers, delivery windows and per-country rates are still being confirmed.`,
+    answerText: `We ship to ${brand.shipping.regions.replace(/\.$/, "")}, with more of the EU to follow. Shipping is a flat rate and free over ${brand.currency.symbol}${(brand.shipping.freeThresholdCents / 100).toFixed(0)}, with the exact rate for your country shown at checkout before you confirm.`,
   },
   {
     id: "delivery-time",
     category: "shipping",
     question: "How long will delivery take?",
     answer:
-      "We do not have a truthful number for you yet. Delivery estimates depend on carrier contracts that are not signed, so publishing a figure now would be a guess dressed up as a promise.",
+      "Delivery estimates are shown at checkout for your address. Because the meals are shelf-stable there is no cold chain to fail — a parcel that sits in a depot overnight is not a problem for this product.",
     more: [
-      "Because the meals are shelf-stable there is no cold chain to fail, which removes the usual reason a food delivery has to be fast. A parcel that sits in a depot overnight is not a problem for this product.",
+      "If your order is delayed, contact us with your order details and we will sort it out.",
     ],
     answerText:
-      "We are not publishing delivery estimates yet, because they depend on carrier contracts that are not finalised. Because the meals are shelf-stable there is no cold chain, so a parcel delayed in transit does not compromise the product.",
+      "Delivery estimates are shown at checkout for your address. Because the meals are shelf-stable there is no cold chain, so a parcel delayed in transit does not compromise the product.",
   },
   {
     id: "returns",
@@ -360,10 +358,9 @@ export const faqItems: FaqItem[] = [
     more: [
       "Opened pouches: we cannot accept those back, on hygiene grounds — EU consumer rules allow that exception for sealed food that has been unsealed. We are not using it as a loophole.",
       "Anything faulty, damaged, contaminated or not as described is a different matter entirely, and your statutory rights apply in full. Send us a photograph and we will replace or refund it. Never eat from a pouch that arrives torn, punctured, swollen or open.",
-      "The returns address and the precise scope of these rules will be confirmed after legal review, before we begin selling.",
     ],
     answerText:
-      "Unopened pouches can be returned within 14 days of delivery for a refund under EU consumer withdrawal rules, with no reason required. Opened pouches cannot be returned on hygiene grounds, which EU rules permit for sealed food that has been unsealed. Faulty, damaged, contaminated or misdescribed items are a separate case and statutory rights apply in full — send a photograph and we will replace or refund. Never eat from a pouch that arrives torn, punctured, swollen or open. The returns address and precise scope will be confirmed after legal review before we begin selling.",
+      "Unopened pouches can be returned within 14 days of delivery for a refund under EU consumer withdrawal rules, with no reason required. Opened pouches cannot be returned on hygiene grounds, which EU rules permit for sealed food that has been unsealed. Faulty, damaged, contaminated or misdescribed items are a separate case and statutory rights apply in full — send a photograph and we will replace or refund. Never eat from a pouch that arrives torn, punctured, swollen or open.",
     links: [{ label: "Cancellation and withdrawal", href: "/terms#withdrawal" }],
   },
   {

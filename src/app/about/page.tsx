@@ -7,7 +7,7 @@ import { EditorialFigure } from "@/components/content/editorial-figure";
 import { NumberedList, StatusList } from "@/components/content/editorial-list";
 import { PageHero } from "@/components/content/page-hero";
 import { PullQuote } from "@/components/content/pull-quote";
-import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
+import { DisclaimerNote } from "@/components/ui/concept-badge";
 import { Reveal } from "@/components/ui/reveal";
 import { brand, disclaimers } from "@/lib/brand";
 import { about } from "@/lib/content";
@@ -15,7 +15,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const title = "About";
 const description =
-  "We started with one question: why is convenient food usually the food you have to compromise on? What we're building, what we refuse to do, and an honest account of where a pre-launch food company actually stands.";
+  "We started with one question: why is convenient food usually the food you have to compromise on? What we're building, what we refuse to do, and where FULL. stands today.";
 
 export const metadata: Metadata = {
   title,
@@ -41,12 +41,11 @@ export default function AboutPage() {
         size="sm"
         aside={
           <div className="mt-7 flex flex-wrap items-center gap-4">
-            <ConceptBadge />
             <Link
               href="#status"
               className="link-underline inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-ink"
             >
-              Skip to where we actually are
+              Skip to where we are
               <ArrowRight className="size-4" aria-hidden />
             </Link>
           </div>
@@ -113,9 +112,8 @@ export default function AboutPage() {
                 No press logos. No customer counts. No badges.
               </p>
               <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-fg-muted">
-                A pre-launch company that decorates itself with borrowed credibility is telling you
-                something about how it will behave later. We would rather look early than look
-                established.
+                We do not borrow press logos, invent customer counts or dress the site up with
+                credibility we have not earned. The meals and the numbers should do the talking.
               </p>
             </div>
             <Link

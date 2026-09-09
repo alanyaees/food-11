@@ -10,7 +10,6 @@ import { EditorialFigure } from "@/components/content/editorial-figure";
 import { PouchDiagram } from "@/components/content/pouch-diagram";
 import { PrepSequence } from "@/components/content/prep-sequence";
 import { WaterCycle } from "@/components/content/water-cycle";
-import { ConceptBadge } from "@/components/ui/concept-badge";
 import { PageHero } from "@/components/content/page-hero";
 import { Reveal } from "@/components/ui/reveal";
 import { brand, disclaimers } from "@/lib/brand";
@@ -181,10 +180,9 @@ export default function HowItWorksPage() {
           <div className="flex flex-col gap-6 border-t border-white/12 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-xl text-[0.9375rem] leading-relaxed text-on-ink-muted">
               Full macro breakdowns, micronutrients and the reasoning behind every ingredient live
-              on the nutrition page — including the parts that are still concept data.
+              on the nutrition page.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <ConceptBadge tone="inverse" />
               <Link
                 href="/nutrition"
                 className="link-underline inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-on-ink"

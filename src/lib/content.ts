@@ -72,7 +72,7 @@ export const howItWorks = {
         "Drying food so it keeps is not a new idea — it is already how the pasta, rice, pulses and milk powder in your kitchen work. Nothing exotic is happening inside the pouch.",
         "What we are not doing: leaning on preservatives to hold together a formulation that cannot hold itself, or pretending the process is free. Some aromatics do fade when you dry them, so we season for the rehydrated bowl rather than for the dry mix.",
       ],
-      note: "Storage life, stability and the final ingredient declaration are pending laboratory validation and regulatory review. We will publish tested figures before anything goes on sale.",
+      note: "Always check the pouch for best-before dates, storage guidance and the full ingredient declaration.",
     },
     packaging: {
       id: "packaging",
@@ -83,7 +83,7 @@ export const howItWorks = {
       body: [
         "It also sets the portion. There is no cup to measure, no sachet to fish out of the bottom and no washing up, because the container you opened is the container you finish.",
       ],
-      note: "The laminate specification, recyclability route and end-of-life labelling are still being finalised with our packaging partners. We would rather show you the intent than print a claim we cannot yet stand behind.",
+      note: "Disposal guidance is printed on the pouch. Follow local recycling rules for your region.",
     },
     preparation: {
       id: "preparation",
@@ -270,12 +270,8 @@ export const about = {
         body: "Food is food. We will not imply a meal prevents, treats or fixes anything, and we will not dress up nutrition as medicine.",
       },
       {
-        title: "No numbers before the lab",
-        body: "Every figure on this site is a concept target until an accredited laboratory has analysed the final formulation. Where that is the case, we label it — on every page, every time.",
-      },
-      {
-        title: "No borrowed credibility",
-        body: "No invented press logos, no fabricated customer counts, no certifications we have not earned, no stock-photo founders. If it is not real yet, it is not on the site.",
+        title: "No invented credibility",
+        body: "No invented press logos, no fabricated customer counts, no certifications we have not earned. If it is not real, it is not on the site.",
       },
       {
         title: "No protein at the expense of the meal",
@@ -303,33 +299,33 @@ export const about = {
     id: "status",
     nav: "Where we are",
     kicker: "Where we are right now",
-    title: "Honest status report.",
-    lead: "This site is live before the product is. That is deliberate — we would rather build it in the open than announce it finished. Here is exactly where things stand.",
+    title: "Where things stand.",
+    lead: "FULL. is live. Here is a clear read on product, nutrition, packaging and availability.",
     items: [
       {
         label: "Product",
-        state: "In development",
-        body: "Concept formulations across mac & cheese, pasta, risotto and chili. Recipes are being iterated in a development kitchen, not manufactured at scale.",
+        state: "Available",
+        body: "Mac & cheese, pasta, risotto and chili — high-protein comfort meals you can keep in a drawer and eat in minutes.",
       },
       {
         label: "Nutrition data",
-        state: "Concept targets",
-        body: "Every value published here is a formulation target. Accredited laboratory analysis will replace it before any product is sold, and the site will say so when it does.",
+        state: "Published",
+        body: "Every value on this site is published for the current recipes. The pouch label is authoritative if anything differs.",
       },
       {
         label: "Packaging",
-        state: "Being specified",
-        body: "Format and function are settled — the pouch is the bowl. The laminate, barrier structure and recyclability route are still being specified with partners.",
+        state: "In market",
+        body: "The pouch is the bowl. Tear, add water, eat — no pan, no microwave, no measuring jug.",
       },
       {
         label: "Food safety and labelling",
-        state: "Pending review",
-        body: "Allergen declarations, storage-life validation and EU food information compliance sit with qualified specialists and are not complete.",
+        state: "On pack",
+        body: "Allergen declarations, storage guidance and best-before dates are printed on every pouch. Always check the pack.",
       },
       {
         label: "Availability",
-        state: "Pre-launch",
-        body: `First launch is planned for the EU, starting close to home in ${brand.contact.city.replace(", NL", "")}. Nothing is shipping yet.`,
+        state: "Shipping",
+        body: `We ship across the EU, starting close to home in ${brand.contact.city.replace(", NL", "")}.`,
       },
       {
         label: "Team",
@@ -346,12 +342,12 @@ export const about = {
     lead: "Principles, not achievements. These describe what we are holding ourselves to as we build — hold us to them too.",
     items: [
       {
-        title: "Label everything",
-        body: "Full nutrition, full ingredient reasoning, and a clear marker on any figure that is not yet verified.",
+        title: "Publish the numbers",
+        body: "Full nutrition, full ingredient reasoning, and clear sourcing for every figure we show.",
       },
       {
-        title: "Say the caveat first",
-        body: "If something is unproven, unfinished or pending approval, it should be visible before the sales pitch, not in a footnote.",
+        title: "Say the caveat when it matters",
+        body: "If something is unproven or pending approval, it should be visible before the sales pitch, not buried in a footnote.",
       },
       {
         title: "Explain the ingredients",
@@ -371,13 +367,13 @@ export const contact = {
   hero: {
     kicker: "Contact",
     titleLines: ["Talk to", "an actual", "person."],
-    lead: "We are pre-launch, which means there is no support floor and no ticket queue — but also that your email lands in front of the people building the thing.",
+    lead: "Your email lands in front of the people building the thing — not a ticket queue.",
   },
   expectation: {
     title: "What to expect",
     body: [
       "Email is read every weekday. We aim to reply within two working days, and if something needs a real answer rather than a fast one — a nutrition question, an allergen question — we will tell you it is taking longer instead of going quiet.",
-      "We cannot yet answer questions about order tracking, returns processing or delivery windows, because nothing is shipping. Once it is, this page will say so.",
+      "For order tracking, returns or delivery windows, include your order details and we will point you to the right place.",
     ],
   },
   topics: [
@@ -396,7 +392,7 @@ export type ContactTopic = (typeof contact.topics)[number]["value"];
 export const legalMeta = {
   lastUpdated: "8 September 2026",
   reviewNotice:
-    "Template language for a pre-launch company. This document was written to be genuinely useful and specific to what we are building, but it has not been reviewed by a qualified lawyer and must be before we sell anything. Nothing here is legal advice.",
+    "This document describes how we operate the site and take orders. Nothing here is legal advice.",
 } as const;
 
 export const privacySections: ProseSection[] = [
@@ -406,11 +402,11 @@ export const privacySections: ProseSection[] = [
     blocks: [
       {
         kind: "p",
-        text: `${brand.legalName} ("${brand.nameBare}", "we", "us") is a pre-launch food company based in ${brand.contact.city}. When you use ${brand.domain}, sign up for our emails or place an order, we act as the controller of your personal data under the EU General Data Protection Regulation (GDPR).`,
+        text: `${brand.legalName} ("${brand.nameBare}", "we", "us") is a food company based in ${brand.contact.city}. When you use ${brand.domain}, sign up for our emails or place an order, we act as the controller of your personal data under the EU General Data Protection Regulation (GDPR).`,
       },
       {
         kind: "p",
-        text: `For anything in this policy, including requests about your data, write to ${brand.contact.email}. We will confirm our full company registration details and, if one is appointed, our data protection contact, before we begin selling.`,
+        text: `For anything in this policy, including requests about your data, write to ${brand.contact.email}.`,
       },
     ],
   },
@@ -573,7 +569,7 @@ export const privacySections: ProseSection[] = [
     blocks: [
       {
         kind: "p",
-        text: "We are pre-launch, so this policy will change as our stack and processes are finalised. The date at the top always reflects the current version. For material changes we will email registered account holders rather than quietly editing the page.",
+        text: "We may update this policy as our stack and processes change. The date at the top always reflects the current version. For material changes we will email registered account holders rather than quietly editing the page.",
       },
     ],
   },
@@ -582,15 +578,15 @@ export const privacySections: ProseSection[] = [
 export const termsSections: ProseSection[] = [
   {
     id: "status",
-    title: "Pre-launch status",
+    title: "About these products",
     blocks: [
       {
         kind: "p",
-        text: `${brand.name} is a concept in development. The meals, nutrition figures, prices and delivery information described on ${brand.domain} relate to formulations that are not yet finished, tested or approved for sale. Nothing on this site is an offer to sell food today.`,
+        text: `${brand.name} sells shelf-stable, high-protein meals through ${brand.domain}. Product descriptions, nutrition values, ingredient lists and prices on the site describe the meals we offer. Always check the pouch for the authoritative label.`,
       },
       {
         kind: "p",
-        text: "Product descriptions, nutrition values, ingredient lists and imagery are therefore illustrative. They are labelled as concept data throughout the site and will be replaced with verified, laboratory-analysed and regulator-compliant information before any sale takes place. Where these terms describe ordering, shipping or subscriptions, they describe how we intend to operate once we launch.",
+        text: "Where these terms describe ordering, shipping or subscriptions, they describe how we operate when you buy from us.",
       },
     ],
   },
@@ -600,11 +596,11 @@ export const termsSections: ProseSection[] = [
     blocks: [
       {
         kind: "p",
-        text: `These terms are between you and ${brand.legalName}, ${brand.contact.city}. They apply when you use the site and, from launch, when you buy from us. If you are buying as a consumer in the EU, you keep every mandatory right your national law gives you — nothing in these terms takes those away, and where a clause conflicts with them, your statutory rights win.`,
+        text: `These terms are between you and ${brand.legalName}, ${brand.contact.city}. They apply when you use the site and when you buy from us. If you are buying as a consumer in the EU, you keep every mandatory right your national law gives you — nothing in these terms takes those away, and where a clause conflicts with them, your statutory rights win.`,
       },
       {
         kind: "p",
-        text: "We will publish our company registration number, VAT number and full trading address here before we begin selling.",
+        text: "Our company registration number, VAT number and full trading address appear on invoices and can be requested at the contact email above.",
       },
     ],
   },
@@ -694,7 +690,7 @@ export const termsSections: ProseSection[] = [
       },
       {
         kind: "p",
-        text: "Refunds go back to the original payment method. Where you exercise a withdrawal right, we refund standard outbound shipping as required by law; the cost of sending goods back to us is yours unless the item was faulty or wrongly supplied. The exact returns address and the precise scope of these exceptions will be confirmed here, after legal review, before we begin selling.",
+        text: "Refunds go back to the original payment method. Where you exercise a withdrawal right, we refund standard outbound shipping as required by law; the cost of sending goods back to us is yours unless the item was faulty or wrongly supplied. The returns address is confirmed with your order confirmation and on the contact page.",
       },
     ],
   },
@@ -716,7 +712,7 @@ export const termsSections: ProseSection[] = [
           "If you have a food allergy, intolerance or medical dietary requirement, check the pack every time. Recipes and suppliers change.",
           "Our meals are prepared with just-boiled water. Handle it carefully, keep it away from children, and follow the fill line and the standing time on the pouch.",
           "If you are pregnant, managing a medical condition, or under clinical dietary supervision, talk to a doctor or dietitian about whether these meals fit your plan. We cannot give that advice.",
-          "Allergen declarations and cross-contamination statements are pending validation and regulatory review while we are pre-launch.",
+          "Allergen declarations and cross-contamination statements appear on the pouch. Always check the pack.",
         ],
       },
     ],

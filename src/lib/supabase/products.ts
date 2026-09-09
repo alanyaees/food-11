@@ -230,7 +230,7 @@ export function mapProductRow(row: ProductRow): Product {
   const facts = firstNutrition(row.nutrition_facts);
   const waterMl = row.water_ml ?? seeded?.waterMl ?? 280;
   const prepMinutes = row.prep_minutes ?? seeded?.prepMinutes ?? 3;
-  const status: DataStatus = row.data_status === "verified" ? "verified" : "concept";
+  const status: DataStatus = row.data_status === "concept" ? "concept" : "verified";
   const ingredients = toIngredients(row.ingredients);
 
   return {

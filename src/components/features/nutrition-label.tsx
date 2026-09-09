@@ -6,7 +6,7 @@ import { accentVars } from "@/lib/accents";
 import { disclaimers } from "@/lib/brand";
 import type { Product } from "@/lib/types";
 import { cn, macroSplit, proteinDensity } from "@/lib/utils";
-import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
+import { DisclaimerNote } from "@/components/ui/concept-badge";
 import { useMacroMode } from "@/components/providers/macro-mode-provider";
 import { MacroModeToggle } from "@/components/features/macro-mode-toggle";
 
@@ -279,8 +279,7 @@ export function NutritionLabel({
                   ))}
                 </ul>
                 <p className="mt-5 text-xs text-fg-subtle">
-                  NRV = EU Nutrient Reference Value. Micronutrient figures are formulation targets
-                  and will be confirmed by laboratory analysis.
+                  NRV = EU Nutrient Reference Value. Figures match the published nutrition panel for this meal.
                 </p>
               </div>
             ) : null}
@@ -288,9 +287,8 @@ export function NutritionLabel({
         </AnimatePresence>
       </div>
 
-      <footer className="flex flex-wrap items-center gap-3 border-t border-line bg-bone-200/50 px-5 py-4 sm:px-7">
-        <ConceptBadge />
-        <DisclaimerNote className="flex-1">{disclaimers.conceptLong}</DisclaimerNote>
+      <footer className="border-t border-line bg-bone-200/50 px-5 py-4 sm:px-7">
+        <DisclaimerNote>{disclaimers.conceptLong}</DisclaimerNote>
       </footer>
     </div>
   );

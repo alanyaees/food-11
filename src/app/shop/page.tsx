@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ShopBrowser } from "@/components/shop/shop-browser";
 import { MealFinder } from "@/components/features/meal-finder";
-import { ConceptBadge } from "@/components/ui/concept-badge";
 import { ProductCardSkeleton } from "@/components/ui/skeleton";
 import { Reveal, RevealLines } from "@/components/ui/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -89,9 +88,6 @@ export default function ShopPage() {
                   </div>
                 ))}
             </dl>
-            <div className="mt-5">
-              <ConceptBadge />
-            </div>
           </Reveal>
         </div>
       </header>

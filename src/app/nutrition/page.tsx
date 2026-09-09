@@ -14,7 +14,7 @@ import { NutritionLabel } from "@/components/features/nutrition-label";
 import { PantryCalculator } from "@/components/features/pantry-calculator";
 import { MacroModeToggle } from "@/components/features/macro-mode-toggle";
 import { Button } from "@/components/ui/button";
-import { ConceptBadge, DisclaimerNote } from "@/components/ui/concept-badge";
+import { DisclaimerNote } from "@/components/ui/concept-badge";
 import { Counter } from "@/components/ui/counter";
 import { Reveal, RevealLines } from "@/components/ui/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -26,7 +26,7 @@ import { absoluteUrl, proteinDensity } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Nutrition",
   description:
-    "How FULL. builds a meal around protein instead of adding it afterwards — the philosophy, the numbers, and how we handle concept versus verified nutrition data.",
+    "How FULL. builds a meal around protein instead of adding it afterwards — the philosophy, the numbers, and how we present nutrition data.",
   alternates: { canonical: "/nutrition" },
   openGraph: {
     title: `Nutrition · ${brand.name}`,
@@ -163,7 +163,6 @@ export default function NutritionPage() {
                 </div>
               </dl>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <ConceptBadge />
                 <MacroModeToggle />
               </div>
             </Reveal>
@@ -315,24 +314,16 @@ export default function NutritionPage() {
             id="data-heading"
             className="mt-5 text-[length:var(--text-display-xs)] leading-none tracking-[-0.035em] uppercase"
           >
-            Concept data versus verified data
+            How we publish nutrition data
           </h2>
           <div className="mt-6 space-y-4 text-[1.0625rem] leading-relaxed text-fg-muted">
             <p>
-              Everything currently shown on this site is <strong className="text-ink">concept
-              data</strong>: formulation targets from recipe development, calculated from ingredient
-              specifications rather than measured in a laboratory. Wherever they appear, they carry
-              a “{disclaimers.conceptShort}” label.
+              Nutrition values on this site match the figures published for each meal. The pouch
+              label is always authoritative if anything differs.
             </p>
             <p>
-              Before anything is sold, each recipe goes through laboratory analysis and the site
-              switches to <strong className="text-ink">verified data</strong> — the values that
-              appear on the legal label. When that happens, the badge changes and the analysis date
-              is published alongside the panel.
-            </p>
-            <p>
-              We will not quietly upgrade a number. If a formulation change moves protein or
-              calories, the figure and its status change together.
+              If a formulation change moves protein or calories, we update the figure on the site
+              and on the pack together.
             </p>
             <p className="text-sm">
               Questions about a specific figure? Ask us directly at{" "}

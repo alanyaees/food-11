@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 import { accents } from "@/lib/accents";
 import { getProducts } from "@/lib/products";
 import { proteinDensity } from "@/lib/utils";
-import { ConceptBadge } from "@/components/ui/concept-badge";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +28,6 @@ export function DensityPanel({ className }: { className?: string }) {
         <h3 className="font-display text-xl font-extrabold tracking-[-0.03em] uppercase">
           Protein per 100 kcal
         </h3>
-        <ConceptBadge />
       </div>
 
       <ul className="mt-7 space-y-5">
