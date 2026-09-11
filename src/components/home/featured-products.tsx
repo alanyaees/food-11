@@ -29,7 +29,7 @@ export function FeaturedProducts() {
             </h2>
           </div>
           <Reveal delay={0.1}>
-            <Button href="/shop" variant="outline" className="group">
+            <Button href="/shop" variant="outline" className="group w-full sm:w-auto">
               Explore all meals
               <ArrowRight
                 className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"

@@ -69,7 +69,7 @@ export function ProblemSection() {
             </ul>
 
             <Reveal delay={0.15}>
-              <Button href="/nutrition" variant="outlineInverse" size="lg" className="mt-10 group">
+              <Button href="/nutrition" variant="outlineInverse" size="lg" className="mt-10 group w-full sm:w-auto">
                 How we build a meal instead
                 <ArrowRight
                   className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"

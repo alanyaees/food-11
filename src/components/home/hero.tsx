@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { BrandImage } from "@/components/brand/brand-image";
-import { Pouch } from "@/components/brand/pouch";
+import { Pouch, pouchPropsFromProduct } from "@/components/brand/pouch";
 import { Button } from "@/components/ui/button";
 import { RevealLines } from "@/components/ui/reveal";
 import { brand } from "@/lib/brand";
@@ -50,7 +50,7 @@ export function Hero() {
         pointerX.set(0);
         pointerY.set(0);
       }}
-      className="relative overflow-hidden bg-[radial-gradient(130%_100%_at_78%_0%,#fbf8f1_0%,#f4f1ea_42%,#eae3d4_100%)] pt-10 pb-16 sm:pt-14 lg:pt-16 lg:pb-24"
+      className="relative overflow-hidden bg-[radial-gradient(130%_100%_at_78%_0%,#fbf8f1_0%,#f4f1ea_42%,#eae3d4_100%)] pt-8 pb-20 sm:pt-14 lg:pt-16 lg:pb-24"
       aria-labelledby="hero-heading"
     >
       {/* soft accent bloom */}
@@ -59,11 +59,11 @@ export function Hero() {
         className="pointer-events-none absolute top-[-18%] right-[-10%] size-[46rem] rounded-full bg-[radial-gradient(circle,rgba(242,166,59,0.28),transparent_62%)] blur-2xl"
       />
 
-      <div className="container-full relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:gap-10">
+      <div className="container-full relative grid items-center gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:gap-10">
         <div className="relative z-2 mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
           <h1
             id="hero-heading"
-            className="text-[clamp(2.55rem,8vw,5.25rem)] leading-[0.87] tracking-[-0.045em] uppercase"
+            className="text-[clamp(2.4rem,8vw,5.25rem)] leading-[0.87] tracking-[-0.045em] uppercase"
           >
             <RevealLines
               lines={[
@@ -89,16 +89,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
+            className="mt-8 flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start"
           >
-            <Button href="/shop" size="lg" className="group">
+            <Button href="/shop" size="lg" className="group w-full sm:w-auto">
               Explore meals
               <ArrowRight
                 className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"
                 aria-hidden
               />
             </Button>
-            <Button href="/how-it-works" size="lg" variant="outline">
+            <Button href="/how-it-works" size="lg" variant="outline" className="w-full sm:w-auto">
               How it works
             </Button>
           </motion.div>
@@ -107,7 +107,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-3 border-t border-line pt-6 sm:mt-12 sm:gap-4 lg:mx-0"
+            className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-2.5 border-t border-line pt-6 sm:mt-12 sm:gap-4 lg:mx-0"
           >
             {[
               { label: "Protein", value: `36–45 g` },
@@ -118,8 +118,8 @@ export function Hero() {
               { label: "Ready in", value: "3 min" },
             ].map((stat) => (
               <div key={stat.label} className="min-w-0">
-                <dt className="kicker text-fg-subtle">{stat.label}</dt>
-                <dd className="num font-display mt-1.5 text-[1.05rem] font-extrabold tracking-tight sm:text-2xl">
+                <dt className="kicker text-[0.6rem] text-fg-muted sm:text-[0.6875rem]">{stat.label}</dt>
+                <dd className="num font-display mt-1.5 text-[1.05rem] font-extrabold tracking-tight text-ink sm:text-2xl">
                   {stat.value}
                 </dd>
               </div>
@@ -155,18 +155,17 @@ export function Hero() {
             {/* Packaging, floating over the photograph */}
             <motion.div
               style={{ x: pouchX, y: pouchY, rotate: pouchRotate }}
-              className="absolute -right-1 -bottom-10 w-[32%] max-w-[10rem] sm:-right-4 sm:w-[28%] lg:-right-6 lg:-bottom-14 lg:w-[33%] lg:max-w-[13.5rem]"
+              className="absolute right-1 -bottom-8 w-[34%] max-w-[10.5rem] sm:-right-4 sm:-bottom-10 sm:w-[32%] lg:-right-6 lg:-bottom-14 lg:w-[38%] lg:max-w-[15.5rem]"
             >
               <Pouch
-                line={hero.line}
-                flavor={hero.flavor}
-                protein={hero.nutrition.protein}
-                prepMinutes={hero.prepMinutes}
-                accent={hero.accent}
+                {...pouchPropsFromProduct(hero, {
+                  priority: true,
+                  sizes: "(min-width: 1024px) 16vw, 34vw",
+                })}
               />
             </motion.div>
 
-            {/* Floating macro data */}
+            {/* Floating macro data — fine pointer only; chips clutter small touch UIs */}
             <div aria-hidden className="pointer-events-none absolute inset-0 hidden sm:block">
               {macroChips.map((chip, index) => (
                 <motion.div
@@ -195,7 +194,7 @@ export function Hero() {
             </div>
           </div>
 
-          <p className="mt-14 text-center text-[0.7rem] text-fg-subtle sm:mt-12 lg:text-right">
+          <p className="mt-12 text-center text-[0.7rem] text-fg-subtle sm:mt-12 lg:text-right">
             Pictured: {hero.line} — {hero.flavor}.
           </p>
         </motion.div>

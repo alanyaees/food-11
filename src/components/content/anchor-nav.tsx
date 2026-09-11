@@ -56,7 +56,7 @@ export function AnchorNav({
       <div className="container-full">
         <ul
           ref={listRef}
-          className="no-scrollbar -mx-1 flex items-center gap-1 overflow-x-auto py-2"
+          className="no-scrollbar -mx-1 flex items-center gap-1.5 overflow-x-auto py-2.5"
         >
           {items.map((item) => {
             const isActive = item.id === active;
@@ -67,7 +67,7 @@ export function AnchorNav({
                   data-anchor={item.id}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
-                    "relative inline-flex h-10 items-center rounded-full px-4 text-[0.8125rem] font-semibold tracking-tight transition-colors",
+                    "relative inline-flex h-11 items-center rounded-full px-4 text-[0.8125rem] font-semibold tracking-tight transition-colors",
                     isActive ? "text-on-ink" : "text-fg-muted hover:text-ink",
                   )}
                 >

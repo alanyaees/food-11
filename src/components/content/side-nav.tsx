@@ -33,9 +33,9 @@ export function SideNav({
         /* min-w-0 matters: as a grid item this strip's flex list would
            otherwise set the column's minimum width and push the prose
            beside it wider than the viewport. */
-        className="sticky top-(--header-height) z-30 -mx-5 min-w-0 border-b border-line bg-bone/90 px-5 backdrop-blur-xl md:-mx-8 md:px-8 lg:hidden"
+        className="sticky top-(--header-height) z-30 bleed-x min-w-0 border-b border-line bg-bone/90 backdrop-blur-xl lg:hidden"
       >
-        <ul className="no-scrollbar -mx-1 flex items-center gap-1 overflow-x-auto py-2">
+        <ul className="no-scrollbar -mx-1 flex items-center gap-1.5 overflow-x-auto py-2.5">
           {items.map((item) => {
             const isActive = item.id === active;
             return (
@@ -44,7 +44,7 @@ export function SideNav({
                   href={`#${item.id}`}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
-                    "inline-flex h-10 items-center rounded-full border px-4 text-[0.8125rem] font-semibold tracking-tight transition-colors",
+                    "inline-flex h-11 items-center rounded-full border px-4 text-[0.8125rem] font-semibold tracking-tight transition-colors",
                     isActive
                       ? "border-ink bg-ink text-on-ink"
                       : "border-line-strong/70 text-fg-muted hover:border-ink hover:text-ink",

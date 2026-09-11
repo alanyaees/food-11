@@ -82,12 +82,12 @@ export function PrepSequence({
 
             {/* Pack artwork, so the stage still reads as our packaging */}
             <div className="pointer-events-none absolute inset-x-0 top-0 px-5 pt-7">
-              <p className="font-display text-2xl leading-none font-extrabold tracking-[-0.06em] text-white uppercase">
+              <p className="font-display text-2xl leading-none font-extrabold tracking-[-0.07em] text-white uppercase">
                 {brand.name.replace(".", "")}
-                <span style={{ color: tone.base }}>.</span>
+                <span style={{ color: brand.packAccent }}>.</span>
               </p>
-              <p className="kicker mt-2 text-[0.55rem] text-white/50">
-                {accents[accent].label} · single serve
+              <p className="mt-2 text-[0.55rem] font-semibold tracking-[0.16em] text-white/55 uppercase">
+                {brand.packLine}
               </p>
             </div>
 

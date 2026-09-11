@@ -25,13 +25,13 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
   return (
     <Sheet open={open} onClose={onClose} side="full" title="Menu" className="bg-ink text-on-ink">
       <div className="flex h-full flex-col overflow-y-auto overscroll-contain">
-        <div className="flex h-(--header-height) shrink-0 items-center justify-between px-5">
+        <div className="flex h-(--header-height) shrink-0 items-center justify-between px-6">
           <Link href="/" onClick={onClose} aria-label={`${brand.nameBare} — home`}>
             <Wordmark className="text-[1.5rem] text-on-ink" />
           </Link>
         </div>
 
-        <nav aria-label="Mobile" className="px-5 pt-4">
+        <nav aria-label="Mobile" className="px-6 pt-2">
           <ul>
             {primaryNav.map((item, index) => (
               <motion.li
@@ -44,9 +44,9 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="group flex items-baseline justify-between gap-4 py-4"
+                  className="group flex min-h-14 items-baseline justify-between gap-4 py-4"
                 >
-                  <span className="font-display text-[2.1rem] leading-none font-extrabold tracking-[-0.04em] uppercase">
+                  <span className="font-display text-[clamp(1.85rem,8vw,2.1rem)] leading-none font-extrabold tracking-[-0.04em] uppercase">
                     {item.label}
                   </span>
                   <span className="kicker shrink-0 pb-1 text-right text-[0.6rem] text-on-ink-muted">
@@ -58,15 +58,15 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           </ul>
         </nav>
 
-        <div className="px-5 pt-6">
+        <div className="px-6 pt-6">
           <Button href="/survey" onClick={onClose} variant="accent" size="lg" block>
             Take a survey
           </Button>
         </div>
 
-        <div className="mt-8 px-5">
+        <div className="mt-8 px-6">
           <p className="kicker text-on-ink-muted">Popular right now</p>
-          <div className="no-scrollbar -mx-5 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-1">
+          <div className="no-scrollbar -mx-6 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-1">
             {products.map((product) => (
               <Link
                 key={product.slug}
@@ -79,6 +79,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                   flavor={product.flavor}
                   protein={product.nutrition.protein}
                   accent={product.accent}
+                  photoKey={product.images.pouch}
                 />
                 <p className="mt-2 text-sm font-semibold tracking-tight">{product.flavor}</p>
                 <p className="text-xs text-on-ink-muted">{product.line}</p>
@@ -87,17 +88,17 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           </div>
         </div>
 
-        <div className="mt-8 px-5">
+        <div className="mt-8 px-6">
           <MacroModeToggle inverse />
         </div>
 
-        <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-1 px-5 pb-10">
+        <ul className="safe-pb mt-8 grid grid-cols-2 gap-x-4 gap-y-1 px-6 pb-8">
           {secondary.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="flex items-center gap-1 py-2 text-sm text-on-ink-muted transition-colors hover:text-on-ink"
+                className="flex min-h-11 items-center gap-1 py-2.5 text-sm text-on-ink-muted transition-colors hover:text-on-ink"
               >
                 {item.label}
                 <ArrowUpRight className="size-3.5 opacity-50" aria-hidden />

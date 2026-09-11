@@ -112,7 +112,7 @@ export function UseCases() {
 
       <div
         ref={railRef}
-        className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-5 px-5 pb-2 sm:gap-6 md:px-8 xl:px-12"
+        className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-[var(--page-gutter)] px-[var(--page-gutter)] pb-2 sm:gap-6 md:scroll-pl-8 md:px-8 xl:scroll-pl-12 xl:px-12"
         tabIndex={0}
         aria-label="Use cases, horizontally scrollable"
       >
@@ -127,7 +127,7 @@ export function UseCases() {
                 accent={item.accent}
                 alt={item.alt}
                 sizes="(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 78vw"
-                className="aspect-3/4 w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+                className="aspect-3/4 w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] [@media(hover:hover)]:group-hover:scale-[1.05]"
               />
               <div
                 aria-hidden
@@ -135,7 +135,7 @@ export function UseCases() {
               />
               <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                 <p className="kicker text-white/55">0{index + 1}</p>
-                <h3 className="font-display mt-2 text-[clamp(1.4rem,3.4vw,1.9rem)] leading-[0.98] font-extrabold tracking-[-0.035em] text-white uppercase">
+                <h3 className="font-display mt-2 text-[clamp(1.35rem,3.4vw,1.9rem)] leading-[0.98] font-extrabold tracking-[-0.035em] text-white uppercase">
                   {item.headline}
                 </h3>
                 <p className="mt-2 max-w-[24ch] text-sm text-white/75">{item.body}</p>

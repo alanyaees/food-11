@@ -32,14 +32,16 @@ export function websiteSchema() {
 }
 
 export function productSchema(product: Product) {
-  const asset = getAsset(product.images.closeup) ?? getAsset(product.images.hero);
+  const pack = getAsset(product.images.pouch);
+  const food = getAsset(product.images.closeup) ?? getAsset(product.images.hero);
+  const images = [pack, food].filter((asset): asset is NonNullable<typeof asset> => Boolean(asset));
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     sku: product.id,
     description: product.description,
-    image: asset ? [absoluteUrl(asset.path)] : undefined,
+    image: images.length ? images.map((asset) => absoluteUrl(asset.path)) : undefined,
     brand: { "@type": "Brand", name: brand.nameBare },
     category: product.category,
     offers: {

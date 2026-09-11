@@ -111,19 +111,19 @@ export function ShopBrowser() {
           </div>
         </aside>
 
-        <div>
+        <div className="min-w-0">
           {/* Toolbar */}
-          <div className="sticky top-(--header-height) z-20 -mx-5 mb-6 flex items-center justify-between gap-3 border-b border-line bg-bone/90 px-5 py-3 backdrop-blur-md md:-mx-8 md:px-8 lg:static lg:mx-0 lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
-            <p className="num text-sm text-fg-muted">
+          <div className="sticky top-(--header-height) z-20 bleed-x mb-6 flex min-w-0 items-center justify-between gap-2 border-b border-line bg-bone/90 py-3 backdrop-blur-md lg:static lg:mx-0 lg:mb-6 lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
+            <p className="num shrink-0 text-sm text-fg-muted">
               <span className="font-bold text-ink">{products.length}</span>{" "}
               {products.length === 1 ? "meal" : "meals"}
             </p>
 
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 items-center gap-2">
               <button
                 type="button"
                 onClick={() => setDrawerOpen(true)}
-                className="press inline-flex h-10 items-center gap-2 rounded-full border border-line-strong px-4 text-xs font-bold tracking-tight uppercase hover:border-ink lg:hidden"
+                className="press inline-flex h-11 shrink-0 items-center gap-2 rounded-full border border-line-strong px-3.5 text-xs font-bold tracking-tight uppercase hover:border-ink lg:hidden"
               >
                 <SlidersHorizontal className="size-3.5" aria-hidden />
                 Filter
@@ -134,7 +134,7 @@ export function ShopBrowser() {
                 ) : null}
               </button>
 
-              <div className="relative">
+              <div className="relative min-w-0">
                 <label htmlFor="shop-sort" className="sr-only">
                   Sort meals
                 </label>
@@ -144,7 +144,7 @@ export function ShopBrowser() {
                   onChange={(event) =>
                     update({ sort: event.target.value as ShopFilters["sort"] })
                   }
-                  className="h-10 appearance-none rounded-full border border-line-strong bg-bone-100 pr-9 pl-4 text-xs font-bold tracking-tight uppercase outline-none focus:border-ink"
+                  className="h-11 max-w-[11.5rem] appearance-none rounded-full border border-line-strong bg-bone-100 pr-8 pl-3.5 text-xs font-bold tracking-tight uppercase outline-none focus:border-ink sm:max-w-none sm:pr-9 sm:pl-4"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.id} value={option.id}>
@@ -155,7 +155,7 @@ export function ShopBrowser() {
                 <svg
                   aria-hidden
                   viewBox="0 0 12 8"
-                  className="pointer-events-none absolute top-1/2 right-4 h-2 w-3 -translate-y-1/2 text-fg-muted"
+                  className="pointer-events-none absolute top-1/2 right-3 h-2 w-3 -translate-y-1/2 text-fg-muted sm:right-4"
                 >
                   <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.6" />
                 </svg>
@@ -177,10 +177,10 @@ export function ShopBrowser() {
                     <button
                       type="button"
                       onClick={chip.clear}
-                      className="press inline-flex items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 text-xs font-semibold text-on-ink"
+                      className="press inline-flex min-h-10 items-center gap-1.5 rounded-full bg-ink px-3.5 py-2 text-xs font-semibold text-on-ink"
                     >
                       {chip.label}
-                      <X className="size-3" aria-hidden />
+                      <X className="size-3.5" aria-hidden />
                       <span className="sr-only">Remove filter</span>
                     </button>
                   </li>
@@ -189,7 +189,7 @@ export function ShopBrowser() {
                   <button
                     type="button"
                     onClick={reset}
-                    className="press rounded-full border border-line-strong px-3 py-1.5 text-xs font-semibold text-fg-muted hover:border-ink hover:text-ink"
+                    className="press min-h-10 rounded-full border border-line-strong px-3.5 py-2 text-xs font-semibold text-fg-muted hover:border-ink hover:text-ink"
                   >
                     Clear all
                   </button>
@@ -249,7 +249,7 @@ export function ShopBrowser() {
         className="max-h-[85vh]"
       >
         <div className="flex h-full max-h-[85vh] flex-col">
-          <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-6 pb-4">
+          <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-6 pb-4 sm:px-6">
             <FilterPanel
               filters={filters}
               onChange={update}
@@ -258,7 +258,7 @@ export function ShopBrowser() {
               activeCount={activeCount}
             />
           </div>
-          <div className="shrink-0 border-t border-line bg-bone-100 px-5 py-4">
+          <div className="safe-pb shrink-0 border-t border-line bg-bone-100 px-5 pt-4 sm:px-6">
             <Button onClick={() => setDrawerOpen(false)} size="lg" block>
               Show {products.length} {products.length === 1 ? "meal" : "meals"}
             </Button>

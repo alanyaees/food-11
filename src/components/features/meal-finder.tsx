@@ -162,7 +162,7 @@ export function MealFinder({ className }: { className?: string }) {
                           }))
                         }
                         className={cn(
-                          "press rounded-full border px-4 py-2.5 text-sm font-semibold tracking-tight transition-colors",
+                          "press min-h-11 rounded-full border px-4 py-2.5 text-sm font-semibold tracking-tight transition-colors",
                           active
                             ? "border-ink bg-ink text-on-ink"
                             : "border-line-strong text-fg-muted hover:border-ink hover:text-ink",
@@ -217,8 +217,8 @@ export function MealFinder({ className }: { className?: string }) {
                   {result.product.nutrition.protein} g protein ·{" "}
                   {result.product.nutrition.calories} kcal · {result.product.prepMinutes} min
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Button href={`/products/${result.product.slug}`} size="sm">
+                <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                  <Button href={`/products/${result.product.slug}`} size="md" className="w-full sm:w-auto">
                     View meal
                   </Button>
                 </div>

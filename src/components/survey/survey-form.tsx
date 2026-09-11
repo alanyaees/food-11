@@ -143,8 +143,8 @@ export function SurveyForm({ onSubmitted }: Props) {
           {statusMessage}
         </p>
 
-        <div className="mt-7 flex flex-wrap gap-3">
-          <Button href="/shop" variant="accent" size="md">
+        <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button href="/shop" variant="accent" size="md" className="w-full sm:w-auto">
             Explore meals
             <ArrowRight className="size-4" aria-hidden />
           </Button>
@@ -152,6 +152,7 @@ export function SurveyForm({ onSubmitted }: Props) {
             type="button"
             variant="outline"
             size="md"
+            className="w-full sm:w-auto"
             onClick={() => {
               setStatus("idle");
               setStatusMessage("");
@@ -289,7 +290,7 @@ export function SurveyForm({ onSubmitted }: Props) {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="press inline-flex h-13 items-center justify-center gap-2 rounded-full bg-ember px-7 text-[0.9375rem] font-semibold text-white hover:bg-ember-600 disabled:pointer-events-none disabled:opacity-60"
+          className="press inline-flex h-13 w-full items-center justify-center gap-2 rounded-full bg-ember px-7 text-[0.9375rem] font-semibold text-white hover:bg-ember-600 disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
         >
           {status === "submitting" ? (
             <>
@@ -366,7 +367,7 @@ function YesNoField({
               aria-checked={selected}
               onClick={() => onChange(option)}
               className={cn(
-                "press inline-flex h-11 min-w-[5.5rem] items-center justify-center rounded-full border px-5 text-sm font-semibold capitalize transition-colors",
+                "press inline-flex h-11 min-w-[5.5rem] flex-1 items-center justify-center rounded-full border px-5 text-sm font-semibold capitalize transition-colors sm:flex-none",
                 selected
                   ? "border-ink bg-ink text-on-ink"
                   : "border-line-strong bg-bone text-ink hover:border-ink/50",

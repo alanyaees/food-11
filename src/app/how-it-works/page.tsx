@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Pouch } from "@/components/brand/pouch";
+import { Pouch, pouchPropsFromProduct } from "@/components/brand/pouch";
 import { AnchorNav } from "@/components/content/anchor-nav";
 import { ContentSection } from "@/components/content/content-section";
 import { CtaBand } from "@/components/content/cta-band";
@@ -67,7 +67,7 @@ export default function HowItWorksPage() {
           <EditorialFigure
             assetKey="macro-hero-bowl"
             alt="Extreme close-up of a fork lifting cheesy macaroni from a bowl, with a cheese pull caught mid-air"
-            caption="Pictured: Mac + Cheese, Classic Cheddar. Prepared exactly as the instructions describe."
+            caption="Pictured: Pasta Bowl, Creamy Cheese. Prepared exactly as the instructions describe."
             aspect="aspect-4/3"
             tone="dark"
             priority
@@ -119,16 +119,13 @@ export default function HowItWorksPage() {
         copy={sections.packaging}
         mediaSide="right"
         media={
-          <div className="relative mx-auto flex max-w-sm justify-center rounded-2xl border border-line bg-[radial-gradient(120%_100%_at_50%_0%,#fbf8f1,#e9e2d2)] px-8 py-12">
+          <div className="relative mx-auto flex max-w-sm justify-center rounded-2xl border border-line bg-[radial-gradient(120%_100%_at_50%_0%,#fbf8f1,#e9e2d2)] px-6 py-10 sm:px-8 sm:py-12">
             <Pouch
-              line={reference.line}
-              flavor={reference.flavor}
-              protein={reference.nutrition.protein}
-              prepMinutes={reference.prepMinutes}
-              accent={reference.accent}
-              tilt={-3}
-              showBack
-              className="max-w-[16rem]"
+              {...pouchPropsFromProduct(reference, {
+                tilt: -3,
+                sizes: "(min-width: 1024px) 18rem, 70vw",
+              })}
+              className="max-w-[18rem]"
             />
           </div>
         }

@@ -29,23 +29,23 @@ insert into public.products (
 (
   'p_mac_cheddar',
   'mac-and-cheese-classic-cheddar',
-  'FULL. Mac + Cheese — Classic Cheddar',
-  'MAC + CHEESE',
-  'Classic Cheddar',
+  'FULL. Pasta Bowl — Creamy Cheese',
+  'PASTA BOWL',
+  'Creamy Cheese',
   'mac-and-cheese',
   'The one that started the argument.',
   'Proper cheddar sauce, thick enough to coat the back of a spoon, over short-cut pasta with milk and pea protein worked into the dough. Comfort food macros that read like a chicken breast.',
   array[
     'We rebuilt mac & cheese from the pasta up. Instead of bolting protein powder onto a finished sauce, the protein lives inside the pasta and the cheese base, so the texture stays creamy rather than chalky.',
-    'The sauce is built on real aged cheddar and milk protein, thickened with a touch of chickpea flour instead of a wall of starch. That is what keeps 42 g of protein from tasting like a compromise.'
+    'The sauce is built on real aged cheddar and milk protein, thickened with a touch of chickpea flour instead of a wall of starch. That is what keeps 44 g of protein from tasting like a compromise.'
   ],
   array[
-    '42 g protein in a bowl of mac & cheese — 8.2 g per 100 kcal.',
+    '44 g protein in a pasta bowl — 7.7 g per 100 kcal.',
     'Aged cheddar first, protein second: no chalk, no squeak.',
     'One pouch, one utensil, three minutes, zero washing up.',
     'Sits in a drawer for months waiting for a bad day.'
   ],
-  599, 'EUR', 42, 510, 55, 14, 8,
+  599, 'EUR', 44, 570, 55, 20, 8,
   3, 260, 118, 0,
   array['Milk', 'Wheat (gluten)', 'Mustard'],
   array['vegetarian', 'high-fibre'],
@@ -54,8 +54,8 @@ insert into public.products (
 (
   'p_mac_jalapeno',
   'mac-and-cheese-spicy-jalapeno',
-  'FULL. Mac + Cheese — Spicy Jalapeño',
-  'MAC + CHEESE',
+  'FULL. Pasta Bowl — Spicy Jalapeño',
+  'PASTA BOWL',
   'Spicy Jalapeño',
   'mac-and-cheese',
   'Green heat. No regrets.',
@@ -213,7 +213,7 @@ insert into public.nutrition_facts (
   fat_g, saturates_g, fibre_g, salt_g, micronutrients, status
 ) values
 (
-  'p_mac_cheddar', 118, 510, 42, 55, 6, 14, 7, 8, 1.6,
+  'p_mac_cheddar', 118, 570, 44, 55, 6, 20, 10, 8, 1.6,
   '[{"label":"Calcium","amount":"480 mg","nrv":60},
     {"label":"Iron","amount":"5.4 mg","nrv":39},
     {"label":"Potassium","amount":"720 mg","nrv":36},
@@ -282,7 +282,7 @@ where product_id in (
 );
 
 insert into public.ingredients (product_id, name, why, share, position) values
--- Mac + Cheese, Classic Cheddar
+-- Pasta Bowl, Creamy Cheese
 ('p_mac_cheddar', 'High-protein pasta', 'Durum wheat blended with pea protein so the protein is in the pasta, not dusted on top.', 42, 0),
 ('p_mac_cheddar', 'Aged cheddar', 'Real cheese, dried to powder. It is what makes it taste like mac & cheese.', 21, 1),
 ('p_mac_cheddar', 'Milk protein blend', 'Builds the creamy body of the sauce and carries most of the protein.', 18, 2),
@@ -290,7 +290,7 @@ insert into public.ingredients (product_id, name, why, share, position) values
 ('p_mac_cheddar', 'Sunflower oil powder', 'A controlled amount of fat so the sauce feels rich without going greasy.', 5, 4),
 ('p_mac_cheddar', 'Chicory root fibre', 'Adds fibre for a meal that actually keeps you full.', 4, 5),
 ('p_mac_cheddar', 'Mustard, onion, black pepper, sea salt', 'The seasoning that stops cheese sauce tasting flat.', 2, 6),
--- Mac + Cheese, Spicy Jalapeño
+-- Pasta Bowl, Spicy Jalapeño
 ('p_mac_jalapeno', 'High-protein pasta', 'Durum wheat with pea protein for structure and protein in one bite.', 40, 0),
 ('p_mac_jalapeno', 'Aged cheddar', 'The backbone of the sauce — heat needs something to sit on.', 20, 1),
 ('p_mac_jalapeno', 'Milk protein blend', 'Creaminess and the bulk of the protein.', 17, 2),
@@ -343,13 +343,13 @@ where product_id in (
 
 insert into public.product_images (product_id, role, asset_key, alt, position) values
 ('p_mac_cheddar', 'hero', 'hero-mac-cheddar', 'A bowl of creamy macaroni and cheese with steam rising, photographed in a studio beside a matte black meal pouch', 0),
-('p_mac_cheddar', 'pouch', 'pouch-mac-cheddar', 'Matte black FULL. Mac + Cheese Classic Cheddar pouch', 0),
+('p_mac_cheddar', 'pouch', 'pouch-mac-cheddar', 'FULL. Pasta Bowl Creamy Cheese stand-up pouch, open at the top, showing 44 g protein and ready in 3 minutes', 0),
 ('p_mac_cheddar', 'closeup', 'closeup-mac-cheddar', 'Close-up of creamy cheddar macaroni and cheese in a matte ceramic bowl', 0),
 ('p_mac_cheddar', 'lifestyle', 'lifestyle-student', 'A student in a modern flat pouring hot water into a matte black meal pouch on the kitchen counter', 0),
 ('p_mac_cheddar', 'ingredients', 'ingredients-mac-cheddar', 'Overhead flat-lay of dry pasta, cheddar wedges, powders and seasonings arranged in neat rows', 0),
 
 ('p_mac_jalapeno', 'hero', 'hero-mac-jalapeno', 'A bowl of jalapeño macaroni and cheese beside a matte black meal pouch', 0),
-('p_mac_jalapeno', 'pouch', 'pouch-mac-jalapeno', 'Matte black FULL. Mac + Cheese Spicy Jalapeño pouch', 0),
+('p_mac_jalapeno', 'pouch', 'pouch-mac-jalapeno', 'FULL. Pasta Bowl Spicy Jalapeño stand-up pouch', 0),
 ('p_mac_jalapeno', 'closeup', 'closeup-mac-jalapeno', 'Close-up of macaroni and cheese topped with roasted jalapeño slices and coriander', 0),
 ('p_mac_jalapeno', 'lifestyle', 'lifestyle-fitness', 'A young adult in gym clothes eating macaroni and cheese from a pouch at home after training', 0),
 ('p_mac_jalapeno', 'ingredients', 'ingredients-mac-cheddar', 'Overhead flat-lay of dry pasta, cheddar wedges, powders and seasonings arranged in neat rows', 0),

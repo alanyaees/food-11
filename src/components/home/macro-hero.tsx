@@ -29,7 +29,7 @@ export function MacroHero() {
         className="absolute inset-0 bg-[linear-gradient(100deg,rgba(14,14,12,0.96)_0%,rgba(14,14,12,0.82)_38%,rgba(14,14,12,0.35)_72%,rgba(14,14,12,0.6)_100%)]"
       />
 
-      <div className="container-full relative z-2 py-24 sm:py-32 lg:py-40">
+      <div className="container-full relative z-2 py-20 sm:py-32 lg:py-40">
         <div className="max-w-3xl">
           <Reveal>
             <p className="kicker text-on-ink-muted">04 — The point</p>
@@ -113,11 +113,11 @@ export function MacroHero() {
           </Reveal>
 
           <Reveal delay={0.32}>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Button href={`/products/${product.slug}`} variant="inverse" size="lg">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <Button href={`/products/${product.slug}`} variant="inverse" size="lg" className="w-full sm:w-auto">
                 Shop {product.flavor}
               </Button>
-              <Button href="/nutrition" variant="outlineInverse" size="lg">
+              <Button href="/nutrition" variant="outlineInverse" size="lg" className="w-full sm:w-auto">
                 See the full label
               </Button>
             </div>

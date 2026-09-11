@@ -27,9 +27,12 @@ export default function NotFound() {
         </div>
         <div className="mx-auto w-3/5 max-w-[16rem] rotate-[-6deg] lg:w-full">
           <Pouch
-            line="MAC + CHEESE"
+            line="PASTA BOWL"
             flavor="Not found"
             protein={0}
+            carbs={0}
+            fat={0}
+            calories={0}
             prepMinutes={0}
             accent="truffle"
           />

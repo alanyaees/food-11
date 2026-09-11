@@ -48,12 +48,12 @@ export function NewsletterForm() {
             if (state !== "idle") setState("idle");
           }}
           placeholder={brand.newsletter.placeholder}
-          className="h-9 min-w-0 flex-1 bg-transparent px-3 text-sm text-on-ink outline-none placeholder:text-on-ink-muted"
+          className="h-11 min-w-0 flex-1 bg-transparent px-3.5 text-base text-on-ink outline-none placeholder:text-on-ink-muted sm:text-sm"
         />
         <button
           type="submit"
           disabled={state === "loading"}
-          className="press inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-bone px-4 text-xs font-bold tracking-tight text-ink uppercase disabled:opacity-60"
+          className="press inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full bg-bone px-4 text-xs font-bold tracking-tight text-ink uppercase disabled:opacity-60"
         >
           {state === "loading" ? (
             <Loader2 className="size-3.5 animate-spin" aria-hidden />

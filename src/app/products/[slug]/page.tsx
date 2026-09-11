@@ -32,7 +32,7 @@ export async function generateMetadata({
   const product = getProductBySlug(slug);
   if (!product) return { title: "Meal not found" };
 
-  const asset = getAsset(product.images.closeup);
+  const asset = getAsset(product.images.pouch) ?? getAsset(product.images.closeup);
   const title = `${product.line} — ${product.flavor}`;
   const description = `${product.nutrition.protein} g protein, ${product.nutrition.calories} kcal, ready in ${product.prepMinutes} minutes. ${product.description}`;
 
@@ -176,16 +176,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       />
 
       <div className="container-full pt-6 pb-16 sm:pb-24">
-        <nav aria-label="Breadcrumb" className="kicker flex items-center gap-1.5 text-fg-subtle">
-          <Link href="/" className="hover:text-ink">
+        <nav aria-label="Breadcrumb" className="kicker flex flex-wrap items-center gap-x-1.5 gap-y-1 text-fg-subtle">
+          <Link href="/" className="inline-flex min-h-9 items-center hover:text-ink">
             Home
           </Link>
-          <ChevronRight className="size-3" aria-hidden />
-          <Link href="/shop" className="hover:text-ink">
+          <ChevronRight className="size-3 shrink-0" aria-hidden />
+          <Link href="/shop" className="inline-flex min-h-9 items-center hover:text-ink">
             Shop
           </Link>
-          <ChevronRight className="size-3" aria-hidden />
-          <span className="text-ink">{product.flavor}</span>
+          <ChevronRight className="size-3 shrink-0" aria-hidden />
+          <span className="inline-flex min-h-9 items-center text-ink">{product.flavor}</span>
         </nav>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14">
@@ -239,11 +239,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </p>
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="/shop" size="lg">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button href="/shop" size="lg" className="w-full sm:w-auto">
                 See all meals
               </Button>
-              <Button href="/survey" variant="outline" size="lg">
+              <Button href="/survey" variant="outline" size="lg" className="w-full sm:w-auto">
                 Take a survey
               </Button>
             </div>

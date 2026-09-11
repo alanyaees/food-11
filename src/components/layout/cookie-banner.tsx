@@ -56,7 +56,7 @@ export function CookieBanner() {
           animate={{ opacity: 1, y: 0 }}
           exit={reduced ? { opacity: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-x-0 bottom-0 z-[90] p-3 sm:p-4"
+          className="fixed inset-x-0 bottom-0 z-[90] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-4 sm:pb-[max(1rem,env(safe-area-inset-bottom))]"
         >
           <div className="glass mx-auto flex w-full min-w-0 max-w-4xl flex-col gap-3 rounded-2xl p-4 shadow-[0_24px_60px_-28px_rgba(14,14,12,0.45)] sm:flex-row sm:items-center sm:gap-5 sm:p-4">
             <div className="min-w-0 flex-1">
@@ -77,14 +77,14 @@ export function CookieBanner() {
               <button
                 type="button"
                 onClick={() => choose("necessary")}
-                className="press h-10 rounded-full border border-ink/20 px-4 text-sm font-semibold tracking-tight hover:border-ink"
+                className="press h-11 rounded-full border border-ink/20 px-4 text-sm font-semibold tracking-tight hover:border-ink"
               >
                 Necessary only
               </button>
               <button
                 type="button"
                 onClick={() => choose("all")}
-                className="press h-10 rounded-full bg-ink px-4 text-sm font-semibold tracking-tight text-on-ink hover:bg-ink-700"
+                className="press h-11 rounded-full bg-ink px-4 text-sm font-semibold tracking-tight text-on-ink hover:bg-ink-700"
               >
                 Accept
               </button>

@@ -92,6 +92,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                         flavor={product.flavor}
                         protein={product.nutrition.protein}
                         accent={product.accent}
+                        photoKey={product.images.pouch}
                       />
                     </span>
                     <span className="min-w-0 flex-1">

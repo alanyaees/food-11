@@ -285,7 +285,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="press inline-flex h-13 items-center justify-center gap-2 rounded-full bg-ink px-7 text-[0.9375rem] font-semibold text-on-ink hover:bg-ink-700 disabled:pointer-events-none disabled:opacity-60"
+          className="press inline-flex h-13 w-full items-center justify-center gap-2 rounded-full bg-ink px-7 text-[0.9375rem] font-semibold text-on-ink hover:bg-ink-700 disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
         >
           {status === "submitting" ? (
             <>

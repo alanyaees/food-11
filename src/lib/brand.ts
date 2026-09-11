@@ -14,8 +14,17 @@ export const brand = {
   legalName: "FULL Foods B.V.",
   domain: "fullmeals.co",
   tagline: "Comfort food. Re-engineered.",
-  /** Screen-printed line on the pouch. Mixed case on purpose. */
-  packLine: "no B*llsh!t",
+  /** Printed across the pack under the lockup. */
+  packLine: "CONVENIENCE MEETS NUTRITION.",
+  packSubline: "REAL INGREDIENTS. REAL RESULTS.",
+  /** The red used on pack lettering, rules and the timer ring. */
+  packAccent: "#e31c23",
+  packFeatures: [
+    { id: "ingredients", label: "Real ingredients" },
+    { id: "taste", label: "Rich cheese taste" },
+    { id: "prep", label: "Quick prep" },
+    { id: "water", label: "Just add water" },
+  ],
   shortPitch:
     "High-protein meals built for people who want convenience without sacrificing their macros.",
   description:

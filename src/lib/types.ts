@@ -65,9 +65,9 @@ export interface ProductImages {
 export interface Product {
   id: string;
   slug: string;
-  /** Product line, typeset in caps: "MAC + CHEESE". */
+  /** Product line, typeset in caps: "PASTA BOWL". */
   line: string;
-  /** Flavour name: "Classic Cheddar". */
+  /** Flavour name: "Creamy Cheese". */
   flavor: string;
   /** Full display name used in metadata and cart. */
   name: string;

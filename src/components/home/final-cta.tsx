@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Pouch } from "@/components/brand/pouch";
+import { Pouch, pouchPropsFromProduct } from "@/components/brand/pouch";
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/ui/marquee";
 import { Reveal, RevealLines } from "@/components/ui/reveal";
@@ -72,11 +72,9 @@ export function FinalCta() {
                   className="transition-transform duration-500 hover:!translate-y-0"
                 >
                   <Pouch
-                    line={product.line}
-                    flavor={product.flavor}
-                    protein={product.nutrition.protein}
-                    prepMinutes={product.prepMinutes}
-                    accent={product.accent}
+                    {...pouchPropsFromProduct(product, {
+                      sizes: "(min-width: 640px) 12vw, 20vw",
+                    })}
                   />
                 </div>
               </Reveal>

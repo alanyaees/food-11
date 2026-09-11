@@ -70,14 +70,14 @@ export function CtaBand({
             ) : null}
             <Reveal delay={0.15}>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button href={primary.href} variant="inverse" size="lg" className="group">
+                <Button href={primary.href} variant="inverse" size="lg" className="group w-full sm:w-auto">
                   {primary.label}
                   <ArrowRight
                     className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"
                     aria-hidden
                   />
                 </Button>
-                <Button href={secondary.href} variant="outlineInverse" size="lg">
+                <Button href={secondary.href} variant="outlineInverse" size="lg" className="w-full sm:w-auto">
                   {secondary.label}
                 </Button>
               </div>

@@ -63,12 +63,12 @@
   --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 
-  /* Editorial display scale */
-  --text-display-xs: clamp(1.75rem, 4.2vw, 2.5rem);
-  --text-display-sm: clamp(2.1rem, 6vw, 3.5rem);
-  --text-display-md: clamp(2.6rem, 8vw, 5rem);
-  --text-display-lg: clamp(3rem, 11vw, 7.5rem);
-  --text-display-xl: clamp(3.4rem, 15vw, 12rem);
+  /* Editorial display scale — floors tuned for ~375px readability */
+  --text-display-xs: clamp(1.65rem, 4.2vw, 2.5rem);
+  --text-display-sm: clamp(1.95rem, 6vw, 3.5rem);
+  --text-display-md: clamp(2.35rem, 8vw, 5rem);
+  --text-display-lg: clamp(2.7rem, 11vw, 7.5rem);
+  --text-display-xl: clamp(3rem, 15vw, 12rem);
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -127,7 +127,20 @@
 @layer base {
   :root {
     --header-height: 4.25rem;
+    --page-gutter: 1.5rem;
     color-scheme: light;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --page-gutter: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --page-gutter: 3rem;
+    }
   }
 
   * {
@@ -137,6 +150,7 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 0.75rem);
     overflow-x: clip;
   }
 
@@ -182,6 +196,8 @@
   select,
   textarea {
     font-family: inherit;
+    /* Prevent iOS from zooming into fields on focus */
+    font-size: 1rem;
   }
 
   /* Chrome/Safari number input spinners off */
@@ -211,15 +227,17 @@
 @utility container-full {
   width: 100%;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: var(--page-gutter);
   max-width: 96rem;
+}
 
-  @media (min-width: 768px) {
-    padding-inline: 2rem;
-  }
-  @media (min-width: 1280px) {
-    padding-inline: 3rem;
-  }
+/* Bleed sticky toolbars / rails to the container edge */
+@utility bleed-x {
+  margin-inline: calc(var(--page-gutter) * -1);
+  padding-inline: var(--page-gutter);
+  width: calc(100% + (var(--page-gutter) * 2));
+  max-width: none;
+  box-sizing: border-box;
 }
 
 /* Kicker / eyebrow label */
@@ -281,12 +299,26 @@
   --edge-fade: linear-gradient(
     to right,
     transparent,
-    black 3.5rem,
-    black calc(100% - 3.5rem),
+    black 1.5rem,
+    black calc(100% - 1.5rem),
     transparent
   );
   mask-image: var(--edge-fade);
   -webkit-mask-image: var(--edge-fade);
+
+  @media (min-width: 768px) {
+    --edge-fade: linear-gradient(
+      to right,
+      transparent,
+      black 3.5rem,
+      black calc(100% - 3.5rem),
+      transparent
+    );
+  }
+}
+
+@utility safe-pb {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
 }
 
 /* Underline that animates in on hover/focus */

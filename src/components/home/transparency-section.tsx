@@ -50,7 +50,7 @@ export function TransparencySection() {
                       onClick={() => setSlug(option.slug)}
                       aria-pressed={active}
                       className={cn(
-                        "press inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-semibold tracking-tight transition-colors",
+                        "press inline-flex min-h-10 items-center gap-2 rounded-full border px-3.5 py-2.5 text-xs font-semibold tracking-tight transition-colors",
                         active
                           ? "border-ink bg-ink text-on-ink"
                           : "border-line-strong text-fg-muted hover:border-ink hover:text-ink",

@@ -50,7 +50,7 @@ export function SiteHeader() {
             : "border-b border-transparent bg-transparent",
         )}
       >
-        <div className="container-full flex h-(--header-height) items-center justify-between gap-3">
+        <div className="container-full flex h-(--header-height) items-center justify-between gap-2 sm:gap-3">
           <div className="flex min-w-0 items-center gap-8">
             <WordmarkLink className="text-[1.5rem]" />
             <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
@@ -71,18 +71,29 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-            <Button href="/survey" size="sm" variant="accentSoft" className="px-3 text-[0.78rem] sm:px-4 sm:text-[0.8125rem]">
-              Take a survey
+          <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
+            <Button
+              href="/survey"
+              size="sm"
+              variant="accentSoft"
+              aria-label="Take a survey"
+              className="h-10 min-h-10 px-3.5 text-[0.78rem] sm:px-4 sm:text-[0.8125rem]"
+            >
+              <span aria-hidden="true" className="sm:hidden">
+                Survey
+              </span>
+              <span aria-hidden="true" className="hidden sm:inline">
+                Take a survey
+              </span>
             </Button>
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              className="press grid size-10 place-items-center rounded-full text-ink hover:bg-ink/[0.06] lg:hidden"
+              className="press grid size-11 place-items-center rounded-full text-ink hover:bg-ink/[0.06] lg:hidden"
               aria-label="Open menu"
               aria-expanded={menuOpen}
             >
-              <Menu className="size-[1.3rem]" aria-hidden />
+              <Menu className="size-[1.35rem]" aria-hidden />
             </button>
           </div>
         </div>

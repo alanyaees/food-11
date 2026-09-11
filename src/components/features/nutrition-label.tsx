@@ -85,8 +85,8 @@ export function NutritionLabel({
         </div>
       </header>
 
-      <div className="flex items-center gap-1 overflow-x-auto border-b border-line px-3 py-2 sm:px-5">
-        <div role="tablist" aria-label="Nutrition detail" className="flex gap-1">
+      <div className="no-scrollbar flex items-center gap-1 overflow-x-auto border-b border-line px-3 py-2 sm:px-5">
+        <div role="tablist" aria-label="Nutrition detail" className="flex min-w-0 gap-1">
           {tabs.map((item) => (
             <button
               key={item.id}
@@ -97,7 +97,7 @@ export function NutritionLabel({
               id={`nutrition-tab-${item.id}`}
               onClick={() => setTab(item.id)}
               className={cn(
-                "press relative rounded-full px-4 py-2 text-xs font-bold tracking-tight whitespace-nowrap uppercase transition-colors",
+                "press relative rounded-full px-3 py-2.5 text-[0.7rem] font-bold tracking-tight whitespace-nowrap uppercase transition-colors sm:px-4 sm:text-xs",
                 tab === item.id ? "text-on-ink" : "text-fg-muted hover:text-ink",
               )}
             >
@@ -108,7 +108,16 @@ export function NutritionLabel({
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 />
               ) : null}
-              <span className="relative">{item.label}</span>
+              <span className="relative">
+                {item.id === "micros" ? (
+                  <>
+                    <span className="sm:hidden">Micros</span>
+                    <span className="hidden sm:inline">{item.label}</span>
+                  </>
+                ) : (
+                  item.label
+                )}
+              </span>
             </button>
           ))}
         </div>

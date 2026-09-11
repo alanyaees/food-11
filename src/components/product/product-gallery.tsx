@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { BrandImage } from "@/components/brand/brand-image";
-import { Pouch } from "@/components/brand/pouch";
+import { Pouch, pouchPropsFromProduct } from "@/components/brand/pouch";
 import { accentVars } from "@/lib/accents";
 import type { Product } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -64,15 +64,12 @@ export function ProductGallery({ product }: { product: Product }) {
                   className="h-full w-full"
                 />
               ) : (
-                <div className="grid h-full w-full place-items-center bg-[radial-gradient(120%_100%_at_50%_0%,var(--accent-soft)_0%,#efeade_60%,#e0d7c3_100%)] p-10">
-                  <div className="w-[62%] max-w-[18rem]">
+                <div className="grid h-full w-full place-items-center bg-[radial-gradient(120%_100%_at_50%_0%,var(--accent-soft)_0%,#efeade_60%,#e0d7c3_100%)] p-6 sm:p-10">
+                  <div className="w-[78%] max-w-[22rem]">
                     <Pouch
-                      line={product.line}
-                      flavor={product.flavor}
-                      protein={product.nutrition.protein}
-                      prepMinutes={product.prepMinutes}
-                      accent={product.accent}
-                      showBack
+                      {...pouchPropsFromProduct(product, {
+                        sizes: "(min-width: 1024px) 28vw, 70vw",
+                      })}
                     />
                   </div>
                 </div>
@@ -102,7 +99,7 @@ export function ProductGallery({ product }: { product: Product }) {
             aria-selected={active === index}
             onClick={() => setActive(index)}
             className={cn(
-              "press relative w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-colors sm:w-24",
+              "press relative w-[4.75rem] shrink-0 overflow-hidden rounded-lg border-2 transition-colors sm:w-24",
               active === index ? "border-ink" : "border-transparent hover:border-line-strong",
             )}
           >
@@ -116,14 +113,12 @@ export function ProductGallery({ product }: { product: Product }) {
                   className="h-full w-full"
                 />
               ) : (
-                <span className="grid h-full w-full place-items-center bg-ink p-2">
+                <span className="grid h-full w-full place-items-center bg-ink p-1.5">
                   <span className="w-full">
                     <Pouch
-                      line={product.line}
-                      flavor={product.flavor}
-                      protein={product.nutrition.protein}
-                      prepMinutes={product.prepMinutes}
-                      accent={product.accent}
+                      {...pouchPropsFromProduct(product, {
+                        sizes: "96px",
+                      })}
                     />
                   </span>
                 </span>

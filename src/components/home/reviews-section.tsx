@@ -14,7 +14,7 @@ const testerNotes = [
   {
     quote:
       "I genuinely forgot it came out of a pouch until I looked at the pouch. Then I looked at the protein and said something rude.",
-    context: "Tasting panel 03 · Classic Cheddar",
+    context: "Tasting panel 03 · Creamy Cheese",
   },
   {
     quote:

@@ -25,9 +25,9 @@ export const products: Product[] = [
   {
     id: "p_mac_cheddar",
     slug: "mac-and-cheese-classic-cheddar",
-    line: "MAC + CHEESE",
-    flavor: "Classic Cheddar",
-    name: "FULL. Mac + Cheese — Classic Cheddar",
+    line: "PASTA BOWL",
+    flavor: "Creamy Cheese",
+    name: "FULL. Pasta Bowl — Creamy Cheese",
     category: "mac-and-cheese",
     accent: "cheddar",
     tagline: "The one that started the argument.",
@@ -35,10 +35,10 @@ export const products: Product[] = [
       "Proper cheddar sauce, thick enough to coat the back of a spoon, over short-cut pasta with milk and pea protein worked into the dough. Comfort food macros that read like a chicken breast.",
     story: [
       "We rebuilt mac & cheese from the pasta up. Instead of bolting protein powder onto a finished sauce, the protein lives inside the pasta and the cheese base, so the texture stays creamy rather than chalky.",
-      "The sauce is built on real aged cheddar and milk protein, thickened with a touch of chickpea flour instead of a wall of starch. That is what keeps 42 g of protein from tasting like a compromise.",
+      "The sauce is built on real aged cheddar and milk protein, thickened with a touch of chickpea flour instead of a wall of starch. That is what keeps 44 g of protein from tasting like a compromise.",
     ],
     loveIt: [
-      "42 g protein in a bowl of mac & cheese — 8.2 g per 100 kcal.",
+      "44 g protein in a pasta bowl — 7.7 g per 100 kcal.",
       "Aged cheddar first, protein second: no chalk, no squeak.",
       "One pouch, one utensil, three minutes, zero washing up.",
       "Sits in a drawer for months waiting for a bad day.",
@@ -47,12 +47,12 @@ export const products: Product[] = [
     prepMinutes: 3,
     waterMl: 260,
     nutrition: {
-      protein: 42,
-      calories: 510,
+      protein: 44,
+      calories: 570,
       carbs: 55,
       sugars: 6,
-      fat: 14,
-      saturates: 7,
+      fat: 20,
+      saturates: 10,
       fibre: 8,
       saltG: 1.6,
       servingWeightG: 118,
@@ -92,9 +92,9 @@ export const products: Product[] = [
   {
     id: "p_mac_jalapeno",
     slug: "mac-and-cheese-spicy-jalapeno",
-    line: "MAC + CHEESE",
+    line: "PASTA BOWL",
     flavor: "Spicy Jalapeño",
-    name: "FULL. Mac + Cheese — Spicy Jalapeño",
+    name: "FULL. Pasta Bowl — Spicy Jalapeño",
     category: "mac-and-cheese",
     accent: "jalapeno",
     tagline: "Green heat. No regrets.",
@@ -457,7 +457,7 @@ export function getRelatedProducts(slug: string, limit = 3) {
 }
 
 export const categoryLabels: Record<Product["category"], string> = {
-  "mac-and-cheese": "Mac + Cheese",
+  "mac-and-cheese": "Pasta Bowl",
   pasta: "Pasta",
   risotto: "Risotto",
   chili: "Chili",

@@ -144,9 +144,14 @@ export function Sheet({
                 type="button"
                 onClick={onClose}
                 aria-label={`Close ${title.toLowerCase()}`}
-                className="press absolute top-4 right-4 z-10 grid size-9 place-items-center rounded-full border border-line-strong/60 bg-bone-100/80 text-fg-muted hover:text-ink"
+                className={cn(
+                  "press absolute top-3.5 right-3.5 z-10 grid size-11 place-items-center rounded-full border text-fg-muted hover:text-ink",
+                  side === "full"
+                    ? "border-white/15 bg-white/10 text-on-ink hover:bg-white/15 hover:text-on-ink"
+                    : "border-line-strong/60 bg-bone-100/80",
+                )}
               >
-                <X className="size-4" aria-hidden />
+                <X className="size-4.5" aria-hidden />
               </button>
             )}
             {children}

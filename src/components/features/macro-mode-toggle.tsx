@@ -50,7 +50,7 @@ export function MacroModeToggle({
               aria-checked={active}
               onClick={() => setMode(option.id)}
               className={cn(
-                "press relative rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-tight transition-colors",
+                "press relative min-h-10 rounded-full px-3.5 py-2.5 text-xs font-semibold tracking-tight transition-colors",
                 active
                   ? inverse
                     ? "text-ink"

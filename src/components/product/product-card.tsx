@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Flame, Timer } from "lucide-react";
 import { BrandImage } from "@/components/brand/brand-image";
-import { Pouch } from "@/components/brand/pouch";
+import { Pouch, pouchPropsFromProduct } from "@/components/brand/pouch";
 import { accentVars } from "@/lib/accents";
 import type { Product } from "@/lib/types";
 import { cn, proteinDensity } from "@/lib/utils";
@@ -39,19 +39,17 @@ export function ProductCard({
             accent={product.accent}
             sizes={sizes}
             priority={priority}
-            className="absolute inset-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] group-hover:opacity-0"
+            className="absolute inset-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [@media(hover:hover)]:group-hover:scale-[1.04] [@media(hover:hover)]:group-hover:opacity-0"
           />
           <div
             aria-hidden
-            className="absolute inset-0 grid place-items-center bg-[radial-gradient(120%_100%_at_50%_0%,var(--accent-soft)_0%,#efeade_65%,#e4ddcd_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            className="absolute inset-0 grid place-items-center bg-[radial-gradient(120%_100%_at_50%_0%,var(--accent-soft)_0%,#efeade_65%,#e4ddcd_100%)] opacity-0 transition-opacity duration-500 [@media(hover:hover)]:group-hover:opacity-100"
           >
-            <div className="w-[58%] translate-y-2 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+            <div className="w-[58%] translate-y-2 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [@media(hover:hover)]:group-hover:translate-y-0">
               <Pouch
-                line={product.line}
-                flavor={product.flavor}
-                protein={product.nutrition.protein}
-                prepMinutes={product.prepMinutes}
-                accent={product.accent}
+                {...pouchPropsFromProduct(product, {
+                  sizes: "(min-width: 1280px) 14vw, (min-width: 768px) 28vw, 55vw",
+                })}
               />
             </div>
           </div>
@@ -112,7 +110,7 @@ export function ProductCard({
         <div className="mt-4">
           <Link
             href={`/products/${product.slug}`}
-            className="press inline-flex h-10 w-full items-center justify-center rounded-full border border-ink/20 px-4 text-xs font-bold tracking-tight uppercase hover:border-ink"
+            className="press inline-flex h-11 w-full items-center justify-center rounded-full border border-ink/20 px-4 text-xs font-bold tracking-tight uppercase hover:border-ink"
           >
             View meal
           </Link>
